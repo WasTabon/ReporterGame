@@ -2283,6 +2283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_01 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1532792802756676, guid: ac192b529e48339409526fbd8ef6361b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4633139844388530, guid: ac192b529e48339409526fbd8ef6361b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.649949
