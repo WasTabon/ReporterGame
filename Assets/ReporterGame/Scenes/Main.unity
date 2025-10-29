@@ -797,7 +797,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33306360}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
@@ -2833,6 +2833,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed59b3b9e572bc144b7f21f6eaee6923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 2007086752}
+  interviewPanel: {fileID: 654550315}
+  personBackground: {fileID: 1158978147}
+  dialogueBackground: {fileID: 33306360}
+  dialogueOpponent1: {fileID: 290800817}
+  dialoguePlayer1: {fileID: 472704875}
+  optionsBackground: {fileID: 489605548}
+  dialoguePlayer2: {fileID: 1319699059}
+  dialogueOpponent2: {fileID: 1850476792}
+  continueButton: {fileID: 36787924}
+  optionButtons:
+  - {fileID: 1534750742}
+  - {fileID: 624708986}
+  - {fileID: 1360016992}
+  animationDuration: 0.5
 --- !u!1001 &364447290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3806,7 +3821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &489605549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5066,13 +5081,14 @@ GameObject:
   - component: {fileID: 654550316}
   - component: {fileID: 654550318}
   - component: {fileID: 654550317}
+  - component: {fileID: 654550319}
   m_Layer: 5
   m_Name: InterviewPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &654550316
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5133,6 +5149,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654550315}
   m_CullTransparentMesh: 1
+--- !u!225 &654550319
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654550315}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &672720651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7449,6 +7477,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed59b3b9e572bc144b7f21f6eaee6923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  interviewPanel: {fileID: 0}
+  personBackground: {fileID: 0}
+  dialogueBackground: {fileID: 0}
+  dialogueOpponent1: {fileID: 0}
+  dialoguePlayer1: {fileID: 0}
+  optionsBackground: {fileID: 0}
+  dialoguePlayer2: {fileID: 0}
+  dialogueOpponent2: {fileID: 0}
+  continueButton: {fileID: 0}
+  optionButtons: []
+  animationDuration: 0.5
 --- !u!4 &1036488729
 Transform:
   m_ObjectHideFlags: 0
@@ -9939,7 +9979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1319699060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13599,7 +13639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1850476793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14769,13 +14809,14 @@ GameObject:
   - component: {fileID: 2007086753}
   - component: {fileID: 2007086755}
   - component: {fileID: 2007086754}
+  - component: {fileID: 2007086756}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2007086753
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14833,6 +14874,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007086752}
   m_CullTransparentMesh: 1
+--- !u!225 &2007086756
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007086752}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &2010681508
 PrefabInstance:
   m_ObjectHideFlags: 0
