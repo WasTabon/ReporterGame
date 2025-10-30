@@ -996,7 +996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &50303213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3870,6 +3870,14 @@ MonoBehaviour:
   dialoguePlayer2: {fileID: 1319699059}
   dialogueOpponent2: {fileID: 1850476792}
   continueButton: {fileID: 36787924}
+  articlePanel: {fileID: 50303212}
+  enterHeaderPanel: {fileID: 945528360}
+  enterDescriptionPanel: {fileID: 1469980460}
+  enterIconPanel: {fileID: 1266578929}
+  inputHeader: {fileID: 1382342370}
+  continueButtonHeader: {fileID: 151337497}
+  inputDescription: {fileID: 1059124441}
+  continueButtonDescription: {fileID: 430321908}
   optionButtons:
   - {fileID: 1534750742}
   - {fileID: 624708986}
@@ -6560,7 +6568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &654550316
 RectTransform:
   m_ObjectHideFlags: 0

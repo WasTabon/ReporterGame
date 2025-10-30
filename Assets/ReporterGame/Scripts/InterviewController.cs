@@ -22,6 +22,16 @@ public class InterviewController : MonoBehaviour
     [SerializeField] private GameObject dialogueOpponent2;
     [SerializeField] private GameObject continueButton;
 
+    [SerializeField] private GameObject articlePanel;
+    [SerializeField] private GameObject enterHeaderPanel;
+    [SerializeField] private GameObject enterDescriptionPanel;
+    [SerializeField] private GameObject enterIconPanel;
+    
+    [SerializeField] private TMP_InputField inputHeader;
+    [SerializeField] private Button continueButtonHeader;
+    [SerializeField] private TMP_InputField inputDescription;
+    [SerializeField] private Button continueButtonDescription;
+
     [SerializeField] private Button[] optionButtons;
 
     [SerializeField] private float animationDuration = 0.5f;
@@ -32,6 +42,9 @@ public class InterviewController : MonoBehaviour
 
     private List<InterviewData.InterviewQuestion> selectedQuestions;
     private int selectedQuestionIndex;
+    
+    private string savedHeader;
+    private string savedDescription;
 
     private void Awake()
     {
@@ -43,6 +56,11 @@ public class InterviewController : MonoBehaviour
         PrepareUI();
         HideAllButtons();
         StartCoroutine(InterviewRoutine());
+        
+        inputHeader.onValueChanged.AddListener(OnHeaderInputChanged);
+        continueButtonHeader.onClick.AddListener(OnContinueHeaderClicked);
+        inputDescription.onValueChanged.AddListener(OnDescriptionInputChanged);
+        continueButtonDescription.onClick.AddListener(OnContinueDescriptionClicked);
     }
 
     private void PrepareUI()
@@ -57,9 +75,15 @@ public class InterviewController : MonoBehaviour
         dialoguePlayer2.SetActive(false);
         dialogueOpponent2.SetActive(false);
         continueButton.SetActive(false);
+        
+        articlePanel.SetActive(false);
+        enterHeaderPanel.SetActive(false);
+        enterDescriptionPanel.SetActive(false);
+        enterIconPanel.SetActive(false);
 
         SetAlpha(background, 0f);
         SetAlpha(interviewPanel, 0f);
+        SetAlpha(articlePanel, 0f);
         personBackground.transform.localScale = Vector3.zero;
         dialogueBackground.transform.localScale = Vector3.zero;
         dialogueOpponent1.transform.localScale = Vector3.zero;
@@ -306,6 +330,104 @@ public class InterviewController : MonoBehaviour
     private void OnContinueClicked()
     {
         Debug.Log("Continue button clicked!");
+        StartCoroutine(ShowArticlePanel());
+    }
+
+    private IEnumerator ShowArticlePanel()
+    {
+        DOTween.To(() => GetAlpha(interviewPanel), x => SetAlpha(interviewPanel, x), 0f, animationDuration);
+        yield return new WaitForSeconds(animationDuration);
+        interviewPanel.SetActive(false);
+
+        enterHeaderPanel.SetActive(false);
+        enterDescriptionPanel.SetActive(false);
+        enterIconPanel.SetActive(false);
+
+        articlePanel.SetActive(true);
+        DOTween.To(() => GetAlpha(articlePanel), x => SetAlpha(articlePanel, x), 1f, animationDuration);
+        yield return new WaitForSeconds(animationDuration);
+
+        yield return StartCoroutine(ShowPanelWithChildren(enterHeaderPanel));
+        
+        continueButtonHeader.gameObject.SetActive(false);
+        inputHeader.text = "";
+    }
+
+    private IEnumerator ShowPanelWithChildren(GameObject panel)
+    {
+        foreach (Transform child in panel.transform)
+        {
+            child.localScale = Vector3.zero;
+        }
+
+        panel.SetActive(true);
+
+        foreach (Transform child in panel.transform)
+        {
+            child.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+            yield return new WaitForSeconds(animationDuration * 0.2f);
+        }
+    }
+
+    private void OnHeaderInputChanged(string text)
+    {
+        if (!string.IsNullOrEmpty(text) && !continueButtonHeader.gameObject.activeSelf)
+        {
+            continueButtonHeader.gameObject.SetActive(true);
+            continueButtonHeader.transform.localScale = Vector3.zero;
+            continueButtonHeader.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+        }
+    }
+
+    private void OnContinueHeaderClicked()
+    {
+        savedHeader = inputHeader.text;
+        Debug.Log("Header saved: " + savedHeader);
+        StartCoroutine(ShowDescriptionPanel());
+    }
+
+    private IEnumerator ShowDescriptionPanel()
+    {
+        foreach (Transform child in enterHeaderPanel.transform)
+        {
+            child.DOScale(0f, animationDuration).SetEase(Ease.InBack);
+        }
+        yield return new WaitForSeconds(animationDuration);
+        enterHeaderPanel.SetActive(false);
+
+        yield return StartCoroutine(ShowPanelWithChildren(enterDescriptionPanel));
+        
+        continueButtonDescription.gameObject.SetActive(false);
+        inputDescription.text = "";
+    }
+
+    private void OnDescriptionInputChanged(string text)
+    {
+        if (!string.IsNullOrEmpty(text) && !continueButtonDescription.gameObject.activeSelf)
+        {
+            continueButtonDescription.gameObject.SetActive(true);
+            continueButtonDescription.transform.localScale = Vector3.zero;
+            continueButtonDescription.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+        }
+    }
+
+    private void OnContinueDescriptionClicked()
+    {
+        savedDescription = inputDescription.text;
+        Debug.Log("Description saved: " + savedDescription);
+        StartCoroutine(ShowIconPanel());
+    }
+
+    private IEnumerator ShowIconPanel()
+    {
+        foreach (Transform child in enterDescriptionPanel.transform)
+        {
+            child.DOScale(0f, animationDuration).SetEase(Ease.InBack);
+        }
+        yield return new WaitForSeconds(animationDuration);
+        enterDescriptionPanel.SetActive(false);
+
+        yield return StartCoroutine(ShowPanelWithChildren(enterIconPanel));
     }
 
     private void SetAlpha(GameObject obj, float alpha)
