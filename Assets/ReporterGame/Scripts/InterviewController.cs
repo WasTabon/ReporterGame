@@ -2,11 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 
 public class InterviewController : MonoBehaviour
 {
     public static InterviewController Instance;
 
+    [SerializeField] private InterviewData interviewData;
+    
     [SerializeField] private GameObject background;
     [SerializeField] private GameObject interviewPanel;
     [SerializeField] private GameObject personBackground;
@@ -21,6 +25,9 @@ public class InterviewController : MonoBehaviour
     [SerializeField] private Button[] optionButtons;
 
     [SerializeField] private float animationDuration = 0.5f;
+
+    private List<InterviewData.InterviewQuestion> selectedQuestions;
+    private int selectedQuestionIndex;
 
     private void Awake()
     {
@@ -58,9 +65,10 @@ public class InterviewController : MonoBehaviour
         dialogueOpponent2.transform.localScale = Vector3.zero;
         continueButton.transform.localScale = Vector3.zero;
 
-        foreach (Button button in optionButtons)
+        for (int i = 0; i < optionButtons.Length; i++)
         {
-            button.onClick.AddListener(() => OnOptionSelected());
+            int index = i;
+            optionButtons[i].onClick.AddListener(() => OnOptionSelected(index));
         }
 
         Button contButton = continueButton.GetComponent<Button>();
@@ -128,7 +136,43 @@ public class InterviewController : MonoBehaviour
         button.transform.DOScale(0f, 0.3f).SetEase(Ease.InBack);
         Debug.Log("Interview button clicked!");
         
+        PrepareInterview();
         StartCoroutine(ShowInterviewSequence());
+    }
+
+    private void PrepareInterview()
+    {
+        selectedQuestions = new List<InterviewData.InterviewQuestion>();
+        List<InterviewData.InterviewQuestion> availableQuestions = new List<InterviewData.InterviewQuestion>(interviewData.questions);
+
+        for (int i = 0; i < 3 && availableQuestions.Count > 0; i++)
+        {
+            int randomIndex = Random.Range(0, availableQuestions.Count);
+            selectedQuestions.Add(availableQuestions[randomIndex]);
+            availableQuestions.RemoveAt(randomIndex);
+        }
+
+        for (int i = 0; i < optionButtons.Length && i < selectedQuestions.Count; i++)
+        {
+            TextMeshProUGUI buttonText = optionButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+            if (buttonText != null)
+            {
+                buttonText.text = selectedQuestions[i].short_question;
+            }
+        }
+
+        if (interviewData.personSprites != null && interviewData.personSprites.Length > 0)
+        {
+            Sprite randomSprite = interviewData.personSprites[Random.Range(0, interviewData.personSprites.Length)];
+            if (randomSprite != null)
+            {
+                Image personIcon = personBackground.GetComponentInChildren<Image>();
+                if (personIcon != null)
+                {
+                    personIcon.sprite = randomSprite;
+                }
+            }
+        }
     }
 
     private IEnumerator ShowInterviewSequence()
@@ -161,8 +205,9 @@ public class InterviewController : MonoBehaviour
         optionsBackground.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
     }
 
-    private void OnOptionSelected()
+    private void OnOptionSelected(int index)
     {
+        selectedQuestionIndex = index;
         StartCoroutine(ShowResponseSequence());
     }
 
@@ -172,9 +217,21 @@ public class InterviewController : MonoBehaviour
         yield return new WaitForSeconds(animationDuration);
         optionsBackground.SetActive(false);
 
+        TextMeshProUGUI player2Text = dialoguePlayer2.GetComponentInChildren<TextMeshProUGUI>();
+        if (player2Text != null && selectedQuestionIndex < selectedQuestions.Count)
+        {
+            player2Text.text = selectedQuestions[selectedQuestionIndex].main_question;
+        }
+
         dialoguePlayer2.SetActive(true);
         dialoguePlayer2.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(animationDuration);
+
+        TextMeshProUGUI opponent2Text = dialogueOpponent2.GetComponentInChildren<TextMeshProUGUI>();
+        if (opponent2Text != null && selectedQuestionIndex < selectedQuestions.Count)
+        {
+            opponent2Text.text = selectedQuestions[selectedQuestionIndex].answer;
+        }
 
         dialogueOpponent2.SetActive(true);
         dialogueOpponent2.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);

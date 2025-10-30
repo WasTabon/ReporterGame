@@ -2833,6 +2833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed59b3b9e572bc144b7f21f6eaee6923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interviewData: {fileID: 11400000, guid: 40da983a8df925f4e9c45ab48131399f, type: 2}
   background: {fileID: 2007086752}
   interviewPanel: {fileID: 654550315}
   personBackground: {fileID: 1158978147}
@@ -7457,7 +7458,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1036488729}
-  - component: {fileID: 1036488728}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -7465,30 +7465,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1036488728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036488727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed59b3b9e572bc144b7f21f6eaee6923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  background: {fileID: 0}
-  interviewPanel: {fileID: 0}
-  personBackground: {fileID: 0}
-  dialogueBackground: {fileID: 0}
-  dialogueOpponent1: {fileID: 0}
-  dialoguePlayer1: {fileID: 0}
-  optionsBackground: {fileID: 0}
-  dialoguePlayer2: {fileID: 0}
-  dialogueOpponent2: {fileID: 0}
-  continueButton: {fileID: 0}
-  optionButtons: []
-  animationDuration: 0.5
 --- !u!4 &1036488729
 Transform:
   m_ObjectHideFlags: 0

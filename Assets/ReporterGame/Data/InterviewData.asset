@@ -1,0 +1,269 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e834d69a138044e81331800e85fe78, type: 3}
+  m_Name: InterviewData
+  m_EditorClassIdentifier: 
+  questions:
+  - id: 1
+    main_question: If your shoes could file a complaint about today's match, what
+      would be in the report?
+    short_question: What shoes say
+    answer: They'd probably demand emotional support socks and a restraining order
+      against my left foot.
+  - id: 2
+    main_question: Do you think your hairstyle contributed to the team's defeat,
+      or was it just gravity again?
+    short_question: Blame the hair
+    answer: Honestly, the hair tried its best, but gravity is undefeated this season.
+  - id: 3
+    main_question: If aliens invited you to play a match on Mars, what would be your
+      first concern?
+    short_question: Game on Mars
+    answer: I'd worry if the ref's whistle works in zero atmosphere. I barely listen
+      to him on Earth.
+  - id: 4
+    main_question: How would you describe your performance today using only farm
+      animal noises?
+    short_question: Describe with moo
+    answer: Moo... neigh... baa... and a little oink of regret.
+  - id: 5
+    main_question: If your golf ball had feelings, do you think it would forgive
+      you for what happened on hole 9?
+    short_question: Forgive the ball
+    answer: No chance. That ball is still in therapy. We don't talk anymore.
+  - id: 6
+    main_question: Do you consider sweating a skill, a curse, or a form of modern
+      art?
+    short_question: Sweat philosophy
+    answer: It's performance art. Each drop tells a story of panic and poor cardio.
+  - id: 7
+    main_question: If losing burned calories, how fit do you think you'd be right
+      now?
+    short_question: Calories of losing
+    answer: Let's just say I'd be modeling for protein shake commercials by now.
+  - id: 8
+    main_question: What's your secret to maintaining eye contact with snow while
+      falling face-first into it?
+    short_question: Snow stare tips
+    answer: I like to show dominance. If I'm going down, I want the snow to remember
+      me.
+  - id: 9
+    main_question: Do you believe your racket understands your emotional pain, or
+      is it gaslighting you?
+    short_question: Racket emotions
+    answer: It's definitely gaslighting me. It says, 'You missed again? That's a
+      you problem.'
+  - id: 10
+    main_question: If you could rename your bow after today's performance, what would
+      you call it?
+    short_question: Rename the bow
+    answer: '''Oopsie Daisy.'' It''s got strong chaotic energy.'
+  - id: 11
+    main_question: During meditation, do you visualize trophies or just the sound
+      of your coach screaming?
+    short_question: Meditation vision
+    answer: I try for peace, but the coach's voice keeps chanting 'RUN FASTER!' in
+      Sanskrit.
+  - id: 12
+    main_question: "If your dumbbells started talking mid-set, what would they say
+      to motivate\u2014or insult\u2014you?"
+    short_question: Talking dumbbells
+    answer: They'd probably say, 'Bro, gravity's doing all the work. You're just
+      sweating loudly.'
+  - id: 13
+    main_question: Would you rather win the championship or get unlimited free snacks
+      for life?
+    short_question: Snacks or victory
+    answer: Snacks. You can't eat a trophy, but you can dip chips in glory.
+  - id: 14
+    main_question: Does your horse ever judge you silently, or does it prefer passive-aggressive
+      neighing?
+    short_question: Judgy horse
+    answer: Oh, it judges. Every missed jump comes with a sarcastic tail flick.
+  - id: 15
+    main_question: If you could replace water in the pool with any other liquid,
+      what would it be and why?
+    short_question: Pool liquid swap
+    answer: Energy drink. Then I could finally say I swam my way into a heart attack
+      productively.
+  - id: 16
+    main_question: If your coach had a volume knob, what level would you set it to
+      during halftime?
+    short_question: Coach volume
+    answer: Probably mute. Or maybe jazz mode, just to confuse him.
+  - id: 17
+    main_question: Do you stretch before games or just emotionally prepare to disappoint
+      people?
+    short_question: Pre-game ritual
+    answer: Mostly emotional stretching. My self-esteem needs the warm-up.
+  - id: 18
+    main_question: If your last mistake were a flavor of ice cream, what would it
+      taste like?
+    short_question: Failure flavor
+    answer: Probably burnt toast with a hint of regret.
+  - id: 19
+    main_question: Would you say your victory dance scares your opponents or just
+      the general public?
+    short_question: Victory dance fear
+    answer: Mostly the public. The opponents are too busy calling security.
+  - id: 20
+    main_question: If you could add background music to your performance, what song
+      would play during your worst moment?
+    short_question: Fail soundtrack
+    answer: '''Yakety Sax.'' It fits every disaster perfectly.'
+  - id: 21
+    main_question: If your rival became your roommate, what's the first house rule
+      you'd enforce?
+    short_question: Rival roommate rule
+    answer: No training before coffee. Or eye contact. Or existing near me.
+  - id: 22
+    main_question: When the referee blew the whistle, did you hear it as motivation
+      or a personal attack?
+    short_question: Whistle feelings
+    answer: Honestly, it felt like he was judging my entire life.
+  - id: 23
+    main_question: If your career had a mascot, what strange animal would represent
+      it?
+    short_question: Career mascot
+    answer: Probably a confused penguin holding a participation ribbon.
+  - id: 24
+    main_question: If your energy drink could talk, what secrets would it expose
+      about you?
+    short_question: Talking energy drink
+    answer: It would leak that I cry during warm-ups and label it 'hydration.'
+  - id: 25
+    main_question: Would you rather miss the goal dramatically or win so boringly
+      no one remembers?
+    short_question: Epic miss or dull win
+    answer: Miss dramatically. I'm here for the memes, not the medals.
+  - id: 26
+    main_question: If you could bribe luck, what would you offer it before the match?
+    short_question: Bribe luck
+    answer: A lifetime supply of missed opportunities and pizza crusts.
+  - id: 27
+    main_question: How many motivational quotes does it take before you actually
+      feel motivated?
+    short_question: Motivation math
+    answer: Somewhere between 500 and never.
+  - id: 28
+    main_question: If your game plan were a movie, what genre would it be?
+    short_question: Game plan genre
+    answer: Definitely a tragicomedy with subtitles and no happy ending.
+  - id: 29
+    main_question: Would you say your victory was skill, luck, or a cosmic clerical
+      error?
+    short_question: Win explanation
+    answer: I think the universe just sneezed in my favor.
+  - id: 30
+    main_question: If your fans could see your browser history before the game, would
+      they still cheer?
+    short_question: Fan loyalty test
+    answer: Probably not. Too many searches like 'how to fake confidence in interviews.'
+  - id: 31
+    main_question: If your jersey could talk, what would it say about your performance
+      today?
+    short_question: Talking jersey
+    answer: It would probably ask for a transfer to a better player's closet.
+  - id: 32
+    main_question: Would you say your strategy was bold, confused, or just heavily
+      caffeinated?
+    short_question: Strategy type
+    answer: Let's call it 'espresso-based improvisation.'
+  - id: 33
+    main_question: If your team were a pizza, what toppings would represent today's
+      effort?
+    short_question: Team pizza
+    answer: Mostly crust, some disappointment, and one heroic slice of hope.
+  - id: 34
+    main_question: How do you mentally recover from realizing the mascot outperformed
+      you?
+    short_question: Mascot humiliation
+    answer: Therapy and pretending it never happened. The mascot's too powerful.
+  - id: 35
+    main_question: If post-match interviews were a sport, do you think you'd finally
+      win something?
+    short_question: Interview champion
+    answer: Only if sarcasm counts as a performance metric.
+  - id: 36
+    main_question: If your celebration dance caused minor earthquakes, would you
+      tone it down or double it?
+    short_question: Dance disaster
+    answer: Double it. Seismology deserves some excitement too.
+  - id: 37
+    main_question: Would you describe your teamwork as telepathic or telepathetic?
+    short_question: Team telepathy
+    answer: "Definitely telepathetic \u2014 we share failure on a deep level."
+  - id: 38
+    main_question: If the referee had to rate your acting skills during fouls, what
+      score would you get?
+    short_question: Foul acting score
+    answer: "Solid 9 out of 10 \u2014 lost a point for overdramatic screaming."
+  - id: 39
+    main_question: Do you think your lucky charm is working, or has it joined the
+      opponent's side?
+    short_question: Lucky charm status
+    answer: It definitely switched sides after watching me miss that shot.
+  - id: 40
+    main_question: If your career was a cooking recipe, what would be the secret
+      ingredient?
+    short_question: Career recipe
+    answer: A pinch of chaos and a gallon of bad decisions.
+  - id: 41
+    main_question: If your opponent were a vegetable, what kind would they be and
+      why?
+    short_question: Opponent vegetable
+    answer: "Probably a spicy cucumber \u2014 confusing, but dangerous in salads."
+  - id: 42
+    main_question: Would you ever consider blaming Mercury retrograde for your defense
+      strategy?
+    short_question: Mercury excuse
+    answer: Absolutely. When in doubt, blame the cosmos.
+  - id: 43
+    main_question: If you could time travel to fix one mistake from today, would
+      you or just pretend it was 'tactical'?
+    short_question: Time travel fix
+    answer: I'd pretend it was tactical. History loves confidence.
+  - id: 44
+    main_question: When the crowd booed, did you interpret it as negative feedback
+      or free motivation?
+    short_question: Crowd boos
+    answer: I took it as applause in a different language.
+  - id: 45
+    main_question: If your coach could be replaced by an AI, how long before it quits
+      on you?
+    short_question: AI coach lifespan
+    answer: 'Probably three matches. It''ll say ''error: no hope detected.'''
+  - id: 46
+    main_question: Do you train harder for the game or for the post-game memes?
+    short_question: Training purpose
+    answer: Memes last longer than trophies, so you know my priorities.
+  - id: 47
+    main_question: If your pre-game ritual were a TikTok trend, would anyone join
+      in?
+    short_question: Ritual trend
+    answer: Probably not. It mostly involves crying into sports tape.
+  - id: 48
+    main_question: If your water bottle had feelings, would it be proud or terrified
+      of you?
+    short_question: Water bottle mood
+    answer: Terrified. I squeeze it like it owes me rent.
+  - id: 49
+    main_question: Would you call your warm-up routine 'elite preparation' or 'random
+      flailing'?
+    short_question: Warm-up style
+    answer: Somewhere between interpretive dance and panic yoga.
+  - id: 50
+    main_question: If your biggest fan met you today, do you think they'd stay your
+      fan or need therapy?
+    short_question: Fan reaction
+    answer: Therapy first, then maybe a cautious autograph.
+  personSprites: []
