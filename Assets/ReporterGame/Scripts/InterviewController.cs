@@ -31,6 +31,12 @@ public class InterviewController : MonoBehaviour
     [SerializeField] private Button continueButtonHeader;
     [SerializeField] private TMP_InputField inputDescription;
     [SerializeField] private Button continueButtonDescription;
+    
+    [SerializeField] private Image iconImage;
+    [SerializeField] private Button nextButton;
+    [SerializeField] private Button previousButton;
+    [SerializeField] private Button continueButtonIcon;
+    [SerializeField] private Sprite[] iconSprites;
 
     [SerializeField] private Button[] optionButtons;
 
@@ -45,6 +51,9 @@ public class InterviewController : MonoBehaviour
     
     private string savedHeader;
     private string savedDescription;
+    private Sprite savedIcon;
+    
+    private int currentIconIndex = 0;
 
     private void Awake()
     {
@@ -61,6 +70,10 @@ public class InterviewController : MonoBehaviour
         continueButtonHeader.onClick.AddListener(OnContinueHeaderClicked);
         inputDescription.onValueChanged.AddListener(OnDescriptionInputChanged);
         continueButtonDescription.onClick.AddListener(OnContinueDescriptionClicked);
+        
+        nextButton.onClick.AddListener(OnNextIconClicked);
+        previousButton.onClick.AddListener(OnPreviousIconClicked);
+        continueButtonIcon.onClick.AddListener(OnContinueIconClicked);
     }
 
     private void PrepareUI()
@@ -427,7 +440,47 @@ public class InterviewController : MonoBehaviour
         yield return new WaitForSeconds(animationDuration);
         enterDescriptionPanel.SetActive(false);
 
+        currentIconIndex = 0;
+        UpdateIconImage();
+
         yield return StartCoroutine(ShowPanelWithChildren(enterIconPanel));
+    }
+
+    private void OnNextIconClicked()
+    {
+        if (iconSprites.Length > 0)
+        {
+            currentIconIndex = (currentIconIndex + 1) % iconSprites.Length;
+            UpdateIconImage();
+        }
+    }
+
+    private void OnPreviousIconClicked()
+    {
+        if (iconSprites.Length > 0)
+        {
+            currentIconIndex--;
+            if (currentIconIndex < 0)
+            {
+                currentIconIndex = iconSprites.Length - 1;
+            }
+            UpdateIconImage();
+        }
+    }
+
+    private void UpdateIconImage()
+    {
+        if (iconSprites.Length > 0 && iconImage != null)
+        {
+            iconImage.sprite = iconSprites[currentIconIndex];
+        }
+    }
+
+    private void OnContinueIconClicked()
+    {
+        savedIcon = iconImage.sprite;
+        Debug.Log("Icon saved: " + savedIcon.name);
+        Debug.Log("All data saved - Header: " + savedHeader + ", Description: " + savedDescription + ", Icon: " + savedIcon.name);
     }
 
     private void SetAlpha(GameObject obj, float alpha)

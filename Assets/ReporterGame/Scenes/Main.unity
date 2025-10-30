@@ -996,7 +996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &50303213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3878,6 +3878,11 @@ MonoBehaviour:
   continueButtonHeader: {fileID: 151337497}
   inputDescription: {fileID: 1059124441}
   continueButtonDescription: {fileID: 430321908}
+  iconImage: {fileID: 1240823937}
+  nextButton: {fileID: 2015708638}
+  previousButton: {fileID: 1211129704}
+  continueButtonIcon: {fileID: 1115710397}
+  iconSprites: []
   optionButtons:
   - {fileID: 1534750742}
   - {fileID: 624708986}
