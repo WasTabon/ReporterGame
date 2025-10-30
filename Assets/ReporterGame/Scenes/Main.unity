@@ -2849,6 +2849,7 @@ MonoBehaviour:
   - {fileID: 624708986}
   - {fileID: 1360016992}
   animationDuration: 0.5
+  typewriterSpeed: 0.05
 --- !u!1001 &364447290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2947,10 +2948,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1319699060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.017899992, y: 0}
   m_AnchorMax: {x: 0.9543667, y: 1}
-  m_AnchoredPosition: {x: -6.167206, y: 0}
-  m_SizeDelta: {x: 2.9454, y: 0}
+  m_AnchoredPosition: {x: -1.6930847, y: 0}
+  m_SizeDelta: {x: -6.0030003, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368086153
 MonoBehaviour:
@@ -5835,9 +5836,9 @@ RectTransform:
   m_Father: {fileID: 1850476793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03746668, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.0650005, y: 0}
-  m_SizeDelta: {x: -6.252001, y: 0}
+  m_AnchorMax: {x: 0.9723667, y: 1}
+  m_AnchoredPosition: {x: 2.6990051, y: 0}
+  m_SizeDelta: {x: -6.983801, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793855659
 MonoBehaviour:

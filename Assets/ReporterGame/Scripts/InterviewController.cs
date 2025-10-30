@@ -25,6 +25,10 @@ public class InterviewController : MonoBehaviour
     [SerializeField] private Button[] optionButtons;
 
     [SerializeField] private float animationDuration = 0.5f;
+    [SerializeField] private float typewriterSpeed = 0.05f;
+
+    [SerializeField] private string opponent1Text = "Hello! I'm ready for the interview.";
+    [SerializeField] private string player1Text = "Great! Let's begin.";
 
     private List<InterviewData.InterviewQuestion> selectedQuestions;
     private int selectedQuestionIndex;
@@ -177,6 +181,8 @@ public class InterviewController : MonoBehaviour
 
     private IEnumerator ShowInterviewSequence()
     {
+        ResetUI();
+        
         background.SetActive(true);
         DOTween.To(() => GetAlpha(background), x => SetAlpha(background, x), 1f, animationDuration);
         yield return new WaitForSeconds(animationDuration);
@@ -196,10 +202,12 @@ public class InterviewController : MonoBehaviour
         dialogueOpponent1.SetActive(true);
         dialogueOpponent1.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(animationDuration);
+        yield return StartCoroutine(TypewriterEffect(dialogueOpponent1, opponent1Text));
 
         dialoguePlayer1.SetActive(true);
         dialoguePlayer1.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(animationDuration);
+        yield return StartCoroutine(TypewriterEffect(dialoguePlayer1, player1Text));
 
         optionsBackground.SetActive(true);
         optionsBackground.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
@@ -217,28 +225,82 @@ public class InterviewController : MonoBehaviour
         yield return new WaitForSeconds(animationDuration);
         optionsBackground.SetActive(false);
 
-        TextMeshProUGUI player2Text = dialoguePlayer2.GetComponentInChildren<TextMeshProUGUI>();
-        if (player2Text != null && selectedQuestionIndex < selectedQuestions.Count)
+        string player2FullText = "";
+        if (selectedQuestionIndex < selectedQuestions.Count)
         {
-            player2Text.text = selectedQuestions[selectedQuestionIndex].main_question;
+            player2FullText = selectedQuestions[selectedQuestionIndex].main_question;
         }
 
         dialoguePlayer2.SetActive(true);
         dialoguePlayer2.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(animationDuration);
+        yield return StartCoroutine(TypewriterEffect(dialoguePlayer2, player2FullText));
 
-        TextMeshProUGUI opponent2Text = dialogueOpponent2.GetComponentInChildren<TextMeshProUGUI>();
-        if (opponent2Text != null && selectedQuestionIndex < selectedQuestions.Count)
+        string opponent2FullText = "";
+        if (selectedQuestionIndex < selectedQuestions.Count)
         {
-            opponent2Text.text = selectedQuestions[selectedQuestionIndex].answer;
+            opponent2FullText = selectedQuestions[selectedQuestionIndex].answer;
         }
 
         dialogueOpponent2.SetActive(true);
         dialogueOpponent2.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(animationDuration);
+        yield return StartCoroutine(TypewriterEffect(dialogueOpponent2, opponent2FullText));
 
         continueButton.SetActive(true);
         continueButton.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+    }
+
+    private IEnumerator TypewriterEffect(GameObject dialogueObject, string textToShow)
+    {
+        TextMeshProUGUI textComponent = dialogueObject.GetComponentInChildren<TextMeshProUGUI>();
+        if (textComponent != null)
+        {
+            textComponent.text = "";
+
+            foreach (char character in textToShow)
+            {
+                textComponent.text += character;
+                yield return new WaitForSeconds(typewriterSpeed);
+            }
+        }
+    }
+
+    private void ResetUI()
+    {
+        background.SetActive(false);
+        interviewPanel.SetActive(false);
+        personBackground.SetActive(false);
+        dialogueBackground.SetActive(false);
+        dialogueOpponent1.SetActive(false);
+        dialoguePlayer1.SetActive(false);
+        optionsBackground.SetActive(false);
+        dialoguePlayer2.SetActive(false);
+        dialogueOpponent2.SetActive(false);
+        continueButton.SetActive(false);
+
+        SetAlpha(background, 0f);
+        SetAlpha(interviewPanel, 0f);
+        personBackground.transform.localScale = Vector3.zero;
+        dialogueBackground.transform.localScale = Vector3.zero;
+        dialogueOpponent1.transform.localScale = Vector3.zero;
+        dialoguePlayer1.transform.localScale = Vector3.zero;
+        optionsBackground.transform.localScale = Vector3.zero;
+        dialoguePlayer2.transform.localScale = Vector3.zero;
+        dialogueOpponent2.transform.localScale = Vector3.zero;
+        continueButton.transform.localScale = Vector3.zero;
+
+        TextMeshProUGUI text1 = dialogueOpponent1.GetComponentInChildren<TextMeshProUGUI>();
+        if (text1 != null) text1.text = "";
+        
+        TextMeshProUGUI text2 = dialoguePlayer1.GetComponentInChildren<TextMeshProUGUI>();
+        if (text2 != null) text2.text = "";
+        
+        TextMeshProUGUI text3 = dialoguePlayer2.GetComponentInChildren<TextMeshProUGUI>();
+        if (text3 != null) text3.text = "";
+        
+        TextMeshProUGUI text4 = dialogueOpponent2.GetComponentInChildren<TextMeshProUGUI>();
+        if (text4 != null) text4.text = "";
     }
 
     private void OnContinueClicked()
