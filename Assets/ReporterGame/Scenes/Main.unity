@@ -3867,27 +3867,39 @@ MonoBehaviour:
   dialogueBackground: {fileID: 33306360}
   dialogueOpponent1: {fileID: 290800817}
   dialoguePlayer1: {fileID: 472704875}
-  optionsBackground: {fileID: 489605548}
-  dialoguePlayer2: {fileID: 1319699059}
   dialogueOpponent2: {fileID: 1850476792}
-  continueButton: {fileID: 36787924}
-  articlePanel: {fileID: 50303212}
-  enterHeaderPanel: {fileID: 945528360}
-  enterDescriptionPanel: {fileID: 1469980460}
-  enterIconPanel: {fileID: 1266578929}
-  inputHeader: {fileID: 1382342370}
-  continueButtonHeader: {fileID: 151337497}
-  inputDescription: {fileID: 1059124441}
-  continueButtonDescription: {fileID: 430321908}
-  iconImage: {fileID: 1240823937}
-  nextButton: {fileID: 2015708638}
-  previousButton: {fileID: 1211129704}
-  continueButtonIcon: {fileID: 1115710397}
-  iconSprites: []
+  dialoguePlayer2: {fileID: 1319699059}
+  optionsBackground: {fileID: 489605548}
   optionButtons:
   - {fileID: 1534750742}
   - {fileID: 624708986}
   - {fileID: 1360016992}
+  continueButton: {fileID: 36787924}
+  articlePanel: {fileID: 50303212}
+  enterHeaderPanel: {fileID: 945528360}
+  inputHeader: {fileID: 1382342370}
+  continueButtonHeader: {fileID: 151337497}
+  enterDescriptionPanel: {fileID: 1469980460}
+  inputDescription: {fileID: 1059124441}
+  continueButtonDescription: {fileID: 430321908}
+  enterIconPanel: {fileID: 1266578929}
+  iconImage: {fileID: 1240823937}
+  nextButton: {fileID: 2015708638}
+  previousButton: {fileID: 1211129704}
+  continueButtonIcon: {fileID: 1115710397}
+  iconSprites:
+  - {fileID: 21300000, guid: 140e6937f107d7243a1b876f3f83436f, type: 3}
+  - {fileID: 21300000, guid: db8a14a694199474f870b8c367bd57d9, type: 3}
+  - {fileID: 21300000, guid: 15b662e6d8a869442bc451d89ae67f4c, type: 3}
+  resultsPanel: {fileID: 1325149220}
+  articleHeader: {fileID: 1210779048}
+  articleDescription: {fileID: 1568865195}
+  articleIcon: {fileID: 1557707632}
+  article: {fileID: 1360349236}
+  viewHandler: {fileID: 672367957}
+  likesHandler: {fileID: 1344494135}
+  dislikesHandler: {fileID: 1623267509}
+  incomePanel: {fileID: 634364363}
   animationDuration: 0.5
   typewriterSpeed: 0.05
   opponent1Text: Hello! I'm ready for the interview.
@@ -6921,7 +6933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &634364364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13460,7 +13472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1266578930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13979,7 +13991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1325149221
 RectTransform:
   m_ObjectHideFlags: 0

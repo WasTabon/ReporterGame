@@ -9,40 +9,69 @@ public class InterviewController : MonoBehaviour
 {
     public static InterviewController Instance;
 
+    [Header("Data")]
     [SerializeField] private InterviewData interviewData;
     
+    [Header("Main UI")]
     [SerializeField] private GameObject background;
     [SerializeField] private GameObject interviewPanel;
+    
+    [Header("Interview UI - Person & Dialogue")]
     [SerializeField] private GameObject personBackground;
     [SerializeField] private GameObject dialogueBackground;
     [SerializeField] private GameObject dialogueOpponent1;
     [SerializeField] private GameObject dialoguePlayer1;
-    [SerializeField] private GameObject optionsBackground;
-    [SerializeField] private GameObject dialoguePlayer2;
     [SerializeField] private GameObject dialogueOpponent2;
+    [SerializeField] private GameObject dialoguePlayer2;
+    
+    [Header("Interview UI - Options & Continue")]
+    [SerializeField] private GameObject optionsBackground;
+    [SerializeField] private Button[] optionButtons;
     [SerializeField] private GameObject continueButton;
 
+    [Header("Article Panel - Main")]
     [SerializeField] private GameObject articlePanel;
-    [SerializeField] private GameObject enterHeaderPanel;
-    [SerializeField] private GameObject enterDescriptionPanel;
-    [SerializeField] private GameObject enterIconPanel;
     
+    [Header("Article Panel - Header Input")]
+    [SerializeField] private GameObject enterHeaderPanel;
     [SerializeField] private TMP_InputField inputHeader;
     [SerializeField] private Button continueButtonHeader;
+    
+    [Header("Article Panel - Description Input")]
+    [SerializeField] private GameObject enterDescriptionPanel;
     [SerializeField] private TMP_InputField inputDescription;
     [SerializeField] private Button continueButtonDescription;
     
+    [Header("Article Panel - Icon Selection")]
+    [SerializeField] private GameObject enterIconPanel;
     [SerializeField] private Image iconImage;
     [SerializeField] private Button nextButton;
     [SerializeField] private Button previousButton;
     [SerializeField] private Button continueButtonIcon;
     [SerializeField] private Sprite[] iconSprites;
 
-    [SerializeField] private Button[] optionButtons;
+    [Header("Results Panel - Main")]
+    [SerializeField] private GameObject resultsPanel;
+    
+    [Header("Results Panel - Article Display")]
+    [SerializeField] private TextMeshProUGUI articleHeader;
+    [SerializeField] private TextMeshProUGUI articleDescription;
+    [SerializeField] private Image articleIcon;
+    [SerializeField] private RectTransform article;
+    
+    [Header("Results Panel - Statistics")]
+    [SerializeField] private RectTransform viewHandler;
+    [SerializeField] private RectTransform likesHandler;
+    [SerializeField] private RectTransform dislikesHandler;
+    
+    [Header("Results Panel - Income")]
+    [SerializeField] private GameObject incomePanel;
 
+    [Header("Animation Settings")]
     [SerializeField] private float animationDuration = 0.5f;
     [SerializeField] private float typewriterSpeed = 0.05f;
 
+    [Header("Dialogue Text")]
     [SerializeField] private string opponent1Text = "Hello! I'm ready for the interview.";
     [SerializeField] private string player1Text = "Great! Let's begin.";
 
@@ -52,6 +81,10 @@ public class InterviewController : MonoBehaviour
     private string savedHeader;
     private string savedDescription;
     private Sprite savedIcon;
+    
+    private int savedViews;
+    private int savedLikes;
+    private int savedDislikes;
     
     private int currentIconIndex = 0;
 
@@ -93,10 +126,16 @@ public class InterviewController : MonoBehaviour
         enterHeaderPanel.SetActive(false);
         enterDescriptionPanel.SetActive(false);
         enterIconPanel.SetActive(false);
+        
+        resultsPanel.SetActive(false);
+        incomePanel.SetActive(false);
 
         SetAlpha(background, 0f);
         SetAlpha(interviewPanel, 0f);
         SetAlpha(articlePanel, 0f);
+        SetAlpha(resultsPanel, 0f);
+        SetAlpha(incomePanel, 0f);
+        
         personBackground.transform.localScale = Vector3.zero;
         dialogueBackground.transform.localScale = Vector3.zero;
         dialogueOpponent1.transform.localScale = Vector3.zero;
@@ -481,6 +520,123 @@ public class InterviewController : MonoBehaviour
         savedIcon = iconImage.sprite;
         Debug.Log("Icon saved: " + savedIcon.name);
         Debug.Log("All data saved - Header: " + savedHeader + ", Description: " + savedDescription + ", Icon: " + savedIcon.name);
+        
+        StartCoroutine(ShowResultsPanel());
+    }
+
+    private IEnumerator ShowResultsPanel()
+    {
+        DOTween.To(() => GetAlpha(articlePanel), x => SetAlpha(articlePanel, x), 0f, animationDuration);
+        yield return new WaitForSeconds(animationDuration);
+        articlePanel.SetActive(false);
+
+        foreach (Transform child in resultsPanel.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
+        resultsPanel.SetActive(true);
+        DOTween.To(() => GetAlpha(resultsPanel), x => SetAlpha(resultsPanel, x), 1f, animationDuration);
+        yield return new WaitForSeconds(animationDuration);
+
+        articleHeader.text = savedHeader;
+        articleDescription.text = savedDescription;
+        articleIcon.sprite = savedIcon;
+
+        Vector3 originalScale = article.localScale;
+        Vector3 originalPosition = article.localPosition;
+        
+        article.localScale = originalScale * 3f;
+        article.gameObject.SetActive(true);
+        
+        article.DOScale(originalScale, 0.3f).SetEase(Ease.OutBounce);
+        yield return new WaitForSeconds(0.3f);
+
+        yield return StartCoroutine(ShowStatHandler(viewHandler, 1, 9999));
+        yield return StartCoroutine(ShowStatHandler(likesHandler, 0, savedViews));
+        yield return StartCoroutine(ShowStatHandler(dislikesHandler, 0, savedViews));
+
+        yield return StartCoroutine(ShowIncomePanel());
+    }
+
+    private IEnumerator ShowStatHandler(RectTransform handler, int minValue, int maxValue)
+    {
+        TextMeshProUGUI textComponent = handler.GetComponentInChildren<TextMeshProUGUI>();
+        if (textComponent != null)
+        {
+            textComponent.text = "";
+        }
+
+        handler.gameObject.SetActive(true);
+        handler.localScale = Vector3.zero;
+        handler.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+        yield return new WaitForSeconds(animationDuration);
+
+        if (textComponent != null)
+        {
+            int targetValue = Random.Range(minValue, maxValue + 1);
+            
+            float duration = 1f;
+            float elapsed = 0f;
+            
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                int currentValue = Mathf.RoundToInt(Mathf.Lerp(0, targetValue, elapsed / duration));
+                textComponent.text = currentValue.ToString();
+                yield return null;
+            }
+            
+            textComponent.text = targetValue.ToString();
+            
+            if (handler == viewHandler)
+            {
+                savedViews = targetValue;
+            }
+            else if (handler == likesHandler)
+            {
+                savedLikes = targetValue;
+            }
+            else if (handler == dislikesHandler)
+            {
+                savedDislikes = targetValue;
+            }
+        }
+    }
+
+    private IEnumerator ShowIncomePanel()
+    {
+        foreach (Transform child in incomePanel.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
+        incomePanel.SetActive(true);
+        DOTween.To(() => GetAlpha(incomePanel), x => SetAlpha(incomePanel, x), 1f, animationDuration);
+        yield return new WaitForSeconds(animationDuration);
+
+        Transform panelChild = incomePanel.transform.Find("Panel");
+        if (panelChild != null)
+        {
+            RectTransform panelRect = panelChild.GetComponent<RectTransform>();
+            Vector3 originalPosition = panelRect.localPosition;
+            
+            panelRect.localPosition = new Vector3(originalPosition.x + 500f, originalPosition.y, originalPosition.z);
+            panelRect.gameObject.SetActive(true);
+            
+            panelRect.DOLocalMoveX(originalPosition.x, 0.3f).SetEase(Ease.OutQuad);
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        foreach (Transform child in incomePanel.transform)
+        {
+            if (child.name == "Panel") continue;
+            
+            child.localScale = Vector3.zero;
+            child.gameObject.SetActive(true);
+            child.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+            yield return new WaitForSeconds(animationDuration);
+        }
     }
 
     private void SetAlpha(GameObject obj, float alpha)
