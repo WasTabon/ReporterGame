@@ -68,6 +68,9 @@ public class InterviewController : MonoBehaviour
     
     [Header("Results Panel - Income")]
     [SerializeField] private GameObject incomePanel;
+    [SerializeField] private TextMeshProUGUI incomeMoneyText;
+    [SerializeField] private TextMeshProUGUI incomeReputationText;
+    [SerializeField] private Button continueButtonIncome;
 
     [Header("Animation Settings")]
     [SerializeField] private float animationDuration = 0.5f;
@@ -102,15 +105,16 @@ public class InterviewController : MonoBehaviour
         PrepareUI();
         HideAllButtons();
         StartCoroutine(InterviewRoutine());
-        
+    
         inputHeader.onValueChanged.AddListener(OnHeaderInputChanged);
         continueButtonHeader.onClick.AddListener(OnContinueHeaderClicked);
         inputDescription.onValueChanged.AddListener(OnDescriptionInputChanged);
         continueButtonDescription.onClick.AddListener(OnContinueDescriptionClicked);
-        
+    
         nextButton.onClick.AddListener(OnNextIconClicked);
         previousButton.onClick.AddListener(OnPreviousIconClicked);
         continueButtonIcon.onClick.AddListener(OnContinueIconClicked);
+        continueButtonIncome.onClick.AddListener(OnContinueIncomeClicked);
     }
 
     private void PrepareUI()
@@ -617,38 +621,97 @@ public class InterviewController : MonoBehaviour
     }
 
     private IEnumerator ShowIncomePanel()
+{
+    foreach (Transform child in incomePanel.transform)
     {
-        foreach (Transform child in incomePanel.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
+        child.gameObject.SetActive(false);
+    }
 
-        incomePanel.SetActive(true);
-        DOTween.To(() => GetAlpha(incomePanel), x => SetAlpha(incomePanel, x), 1f, animationDuration);
+    incomePanel.SetActive(true);
+    DOTween.To(() => GetAlpha(incomePanel), x => SetAlpha(incomePanel, x), 1f, animationDuration);
+    yield return new WaitForSeconds(animationDuration);
+
+    Transform panelChild = incomePanel.transform.Find("Panel");
+    if (panelChild != null)
+    {
+        RectTransform panelRect = panelChild.GetComponent<RectTransform>();
+        Vector3 originalPosition = panelRect.localPosition;
+        
+        panelRect.localPosition = new Vector3(originalPosition.x + 500f, originalPosition.y, originalPosition.z);
+        panelRect.gameObject.SetActive(true);
+        
+        panelRect.DOLocalMoveX(originalPosition.x, 0.3f).SetEase(Ease.OutQuad);
+        yield return new WaitForSeconds(0.3f);
+    }
+    else
+    {
+        Debug.Log("Panel child not found in incomePanel");
+    }
+
+    int earnedMoney = Random.Range(100, 1001);
+    int earnedReputation = Random.Range(100, 501);
+    
+    if (WalletController.Instance != null)
+    {
+        WalletController.Instance.Money += earnedMoney;
+    }
+    else
+    {
+        Debug.Log("WalletController.Instance is null");
+    }
+
+    if (incomeMoneyText != null)
+    {
+        incomeMoneyText.text = "Money: " + earnedMoney.ToString();
+        incomeMoneyText.gameObject.SetActive(true);
+        incomeMoneyText.transform.localScale = Vector3.zero;
+        incomeMoneyText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(animationDuration);
+    }
+    else
+    {
+        Debug.Log("incomeMoneyText is null");
+    }
 
-        Transform panelChild = incomePanel.transform.Find("Panel");
-        if (panelChild != null)
-        {
-            RectTransform panelRect = panelChild.GetComponent<RectTransform>();
-            Vector3 originalPosition = panelRect.localPosition;
-            
-            panelRect.localPosition = new Vector3(originalPosition.x + 500f, originalPosition.y, originalPosition.z);
-            panelRect.gameObject.SetActive(true);
-            
-            panelRect.DOLocalMoveX(originalPosition.x, 0.3f).SetEase(Ease.OutQuad);
-            yield return new WaitForSeconds(0.3f);
-        }
+    if (incomeReputationText != null)
+    {
+        incomeReputationText.text = "Reputation: " + earnedReputation.ToString();
+        incomeReputationText.gameObject.SetActive(true);
+        incomeReputationText.transform.localScale = Vector3.zero;
+        incomeReputationText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+        yield return new WaitForSeconds(animationDuration);
+    }
+    else
+    {
+        Debug.Log("incomeReputationText is null");
+    }
 
-        foreach (Transform child in incomePanel.transform)
-        {
-            if (child.name == "Panel") continue;
-            
-            child.localScale = Vector3.zero;
-            child.gameObject.SetActive(true);
-            child.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
-            yield return new WaitForSeconds(animationDuration);
-        }
+    if (continueButtonIncome != null)
+    {
+        continueButtonIncome.gameObject.SetActive(true);
+        continueButtonIncome.transform.localScale = Vector3.zero;
+        continueButtonIncome.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+    }
+    else
+    {
+        Debug.Log("continueButtonIncome is null");
+    }
+}
+    
+    private void OnContinueIncomeClicked()
+    {
+        StartCoroutine(CloseAllPanels());
+    }
+
+    private IEnumerator CloseAllPanels()
+    {
+        DOTween.To(() => GetAlpha(resultsPanel), x => SetAlpha(resultsPanel, x), 0f, animationDuration);
+        yield return new WaitForSeconds(animationDuration);
+        resultsPanel.SetActive(false);
+
+        DOTween.To(() => GetAlpha(background), x => SetAlpha(background, x), 0f, animationDuration);
+        yield return new WaitForSeconds(animationDuration);
+        background.SetActive(false);
     }
 
     private void SetAlpha(GameObject obj, float alpha)
