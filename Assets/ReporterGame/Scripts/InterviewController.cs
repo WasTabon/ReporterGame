@@ -208,6 +208,11 @@ public class InterviewController : MonoBehaviour
         }
     }
 
+    public Sprite[] GetIconSprites()
+    {
+        return iconSprites;
+    }
+    
     private Button GetButtonFromRoom(GameObject room)
     {
         Canvas canvas = room.GetComponentInChildren<Canvas>();
@@ -695,6 +700,15 @@ public class InterviewController : MonoBehaviour
     else
     {
         Debug.Log("continueButtonIncome is null");
+    }
+    
+    if (ArticleManager.Instance != null)
+    {
+        ArticleManager.Instance.AddArticle(savedHeader, savedDescription, savedIcon, earnedMoney);
+    }
+    else
+    {
+        Debug.Log("ArticleManager.Instance is null");
     }
 }
     

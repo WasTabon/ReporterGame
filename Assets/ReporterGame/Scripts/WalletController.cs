@@ -28,6 +28,6 @@ public class WalletController : MonoBehaviour
     [ContextMenu("Add Money")]
     public void AddMoney()
     {
-        Money += 500;
+        Money += 5000;
     }
 }
