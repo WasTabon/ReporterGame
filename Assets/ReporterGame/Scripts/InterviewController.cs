@@ -195,7 +195,6 @@ public class InterviewController : MonoBehaviour
             if (purchasedRooms.Length > 0)
             {
                 GameObject randomRoom = purchasedRooms[Random.Range(0, purchasedRooms.Length)];
-                Debug.Log($"Rooms lenght - {purchasedRooms.Length}");
                 Button button = GetButtonFromRoom(randomRoom);
 
                 if (button != null)
