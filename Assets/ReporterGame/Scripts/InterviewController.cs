@@ -77,8 +77,66 @@ public class InterviewController : MonoBehaviour
     [SerializeField] private float typewriterSpeed = 0.05f;
 
     [Header("Dialogue Text")]
-    [SerializeField] private string opponent1Text = "Hello! I'm ready for the interview.";
-    [SerializeField] private string player1Text = "Great! Let's begin.";
+    private string[] player1Texts = new string[]
+    {
+        "Hello! Thanks for joining us.",
+        "Hi there! Great to see you.",
+        "Hey! Welcome to our show.",
+        "Hello! Glad you could make it.",
+        "Hi! Thanks for being here.",
+        "Hey there! How are you today?",
+        "Hello! Let's get started, shall we?",
+        "Hi! Appreciate your time today.",
+        "Hey! Thanks for taking part.",
+        "Hello! Great to have you here.",
+        "Hi there! Welcome to the talk.",
+        "Hey! Nice to meet you again.",
+        "Hello! Hope you're doing well.",
+        "Hi! Thanks for stopping by.",
+        "Hey there! Let's begin now.",
+        "Hello! Excited to talk today.",
+        "Hi there! How are things going?",
+        "Hey! Let's get going then.",
+        "Hello! Ready to dive in?",
+        "Hi! Thanks for coming today.",
+        "Hey there! Thanks for joining.",
+        "Hello! Great to see you again.",
+        "Hi! Appreciate your presence.",
+        "Hey! Let's start the interview.",
+        "Hello! How are you feeling?"
+    };
+
+    private string[] opponent1Texts = new string[]
+    {
+        "Hi! Thanks for having me.",
+        "Hello! I'm ready to begin.",
+        "Hey! Glad to be here.",
+        "Hi there! Excited for this.",
+        "Hello! I'm happy to join.",
+        "Hey! I've been looking forward.",
+        "Hi! Great to be here today.",
+        "Hello! Thanks for inviting me.",
+        "Hey there! I'm all set.",
+        "Hi! Ready when you are.",
+        "Hello! Let's get going now.",
+        "Hey! I'm ready to talk.",
+        "Hi there! It's great to be here.",
+        "Hello! Thanks for this chance.",
+        "Hey! Nice to meet you too.",
+        "Hi! Appreciate the invite.",
+        "Hello! I'm feeling good today.",
+        "Hey there! Ready to start now.",
+        "Hi! Let's do this.",
+        "Hello! I'm here and ready.",
+        "Hey! Thanks for having me!",
+        "Hi there! So glad to join.",
+        "Hello! Great to be part of this.",
+        "Hey! I'm good to start.",
+        "Hi! Excited to talk today."
+    };
+
+    private string selectedOpponent1Text;
+    private string selectedPlayer1Text;
 
     private List<InterviewData.InterviewQuestion> selectedQuestions;
     private int selectedQuestionIndex;
@@ -262,12 +320,15 @@ public class InterviewController : MonoBehaviour
                 personIcon.sprite = randomSprite;
             }
         }
+    
+        selectedOpponent1Text = opponent1Texts[Random.Range(0, opponent1Texts.Length)];
+        selectedPlayer1Text = player1Texts[Random.Range(0, player1Texts.Length)];
     }
 
     private IEnumerator ShowInterviewSequence()
     {
         ResetUI();
-        
+    
         background.SetActive(true);
         DOTween.To(() => GetAlpha(background), x => SetAlpha(background, x), 1f, animationDuration);
         yield return new WaitForSeconds(animationDuration);
@@ -287,12 +348,12 @@ public class InterviewController : MonoBehaviour
         dialogueOpponent1.SetActive(true);
         dialogueOpponent1.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(animationDuration);
-        yield return StartCoroutine(TypewriterEffect(dialogueOpponent1, opponent1Text));
+        yield return StartCoroutine(TypewriterEffect(dialogueOpponent1, selectedOpponent1Text));
 
         dialoguePlayer1.SetActive(true);
         dialoguePlayer1.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(animationDuration);
-        yield return StartCoroutine(TypewriterEffect(dialoguePlayer1, player1Text));
+        yield return StartCoroutine(TypewriterEffect(dialoguePlayer1, selectedPlayer1Text));
 
         optionsBackground.SetActive(true);
         optionsBackground.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
