@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class RoomsController : MonoBehaviour
 {
@@ -7,6 +9,11 @@ public class RoomsController : MonoBehaviour
     [SerializeField] private GameObject[] rooms;
     [SerializeField] private int[] roomPrices = { 100, 250, 500, 1000 };
 
+    [SerializeField] private GameObject _buyPanel;
+    [SerializeField] private TextMeshProUGUI _buyText;
+    
+    [SerializeField] private float panelDisplayDuration = 2f;
+    
     private void Awake()
     {
         Instance = this;
@@ -18,6 +25,15 @@ public class RoomsController : MonoBehaviour
         }
         
         LoadRooms();
+        
+        if (_buyPanel != null)
+        {
+            _buyPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("_buyPanel is null");
+        }
     }
 
     private void LoadRooms()
@@ -52,19 +68,73 @@ public class RoomsController : MonoBehaviour
     private void BuyRoom(int roomIndex)
     {
         if (roomIndex < 0 || roomIndex >= rooms.Length)
+        {
+            Debug.Log("Invalid room index");
             return;
+        }
 
         if (PlayerPrefs.GetInt($"room_{roomIndex}", 0) == 1)
-            return;
-
-        if (WalletController.Instance.Money >= roomPrices[roomIndex])
         {
-            WalletController.Instance.Money -= roomPrices[roomIndex];
-            PlayerPrefs.SetInt($"room_{roomIndex}", 1);
-            PlayerPrefs.Save();
-            rooms[roomIndex].SetActive(true);
-            
-            InterviewController.Instance.HideButtonInRoom(rooms[roomIndex]);
+            ShowBuyPanel("Room already purchased!");
+            return;
+        }
+
+        if (WalletController.Instance != null)
+        {
+            if (WalletController.Instance.Money >= roomPrices[roomIndex])
+            {
+                WalletController.Instance.Money -= roomPrices[roomIndex];
+                PlayerPrefs.SetInt($"room_{roomIndex}", 1);
+                PlayerPrefs.Save();
+                rooms[roomIndex].SetActive(true);
+                
+                if (InterviewController.Instance != null)
+                {
+                    InterviewController.Instance.HideButtonInRoom(rooms[roomIndex]);
+                }
+                else
+                {
+                    Debug.Log("InterviewController.Instance is null");
+                }
+                
+                ShowBuyPanel("Room purchased successfully!");
+            }
+            else
+            {
+                ShowBuyPanel("Not enough money!");
+            }
+        }
+        else
+        {
+            Debug.Log("WalletController.Instance is null");
+        }
+    }
+
+    private void ShowBuyPanel(string message)
+    {
+        if (_buyPanel != null && _buyText != null)
+        {
+            _buyText.text = message;
+            _buyPanel.SetActive(true);
+            StartCoroutine(HideBuyPanelAfterDelay());
+        }
+        else
+        {
+            Debug.Log("_buyPanel or _buyText is null");
+        }
+    }
+
+    private IEnumerator HideBuyPanelAfterDelay()
+    {
+        yield return new WaitForSeconds(panelDisplayDuration);
+        
+        if (_buyPanel != null)
+        {
+            _buyPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("_buyPanel is null");
         }
     }
 
