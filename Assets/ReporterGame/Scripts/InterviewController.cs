@@ -18,6 +18,7 @@ public class InterviewController : MonoBehaviour
     
     [Header("Interview UI - Person & Dialogue")]
     [SerializeField] private GameObject personBackground;
+    [SerializeField] private Image personIcon;
     [SerializeField] private GameObject dialogueBackground;
     [SerializeField] private GameObject dialogueOpponent1;
     [SerializeField] private GameObject dialoguePlayer1;
@@ -52,6 +53,7 @@ public class InterviewController : MonoBehaviour
 
     [Header("Results Panel - Main")]
     [SerializeField] private GameObject resultsPanel;
+    [SerializeField] private TextMeshProUGUI resultsTitleText;
     
     [Header("Results Panel - Article Display")]
     [SerializeField] private TextMeshProUGUI articleHeader;
@@ -91,6 +93,8 @@ public class InterviewController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        
+        // Пофіксити анімації, пофіксити іконку персонажа, не появляється текст в ResultsPanel
     }
 
     private void Start()
@@ -246,11 +250,7 @@ public class InterviewController : MonoBehaviour
             Sprite randomSprite = interviewData.personSprites[Random.Range(0, interviewData.personSprites.Length)];
             if (randomSprite != null)
             {
-                Image personIcon = personBackground.GetComponentInChildren<Image>();
-                if (personIcon != null)
-                {
-                    personIcon.sprite = randomSprite;
-                }
+                personIcon.sprite = randomSprite;
             }
         }
     }
@@ -538,6 +538,18 @@ public class InterviewController : MonoBehaviour
         resultsPanel.SetActive(true);
         DOTween.To(() => GetAlpha(resultsPanel), x => SetAlpha(resultsPanel, x), 1f, animationDuration);
         yield return new WaitForSeconds(animationDuration);
+        
+        if (resultsTitleText != null)
+        {
+            resultsTitleText.gameObject.SetActive(true);
+            resultsTitleText.transform.localScale = Vector3.zero;
+            resultsTitleText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+            yield return new WaitForSeconds(animationDuration);
+        }
+        else
+        {
+            Debug.Log("resultsTitleText is null");
+        }
 
         articleHeader.text = savedHeader;
         articleDescription.text = savedDescription;
