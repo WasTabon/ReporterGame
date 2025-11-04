@@ -5,6 +5,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
+[System.Serializable]
+public class HeaderOption
+{
+    public string shortText;
+    public string fullText;
+}
+
+[System.Serializable]
+public class DescriptionOption
+{
+    public string shortText;
+    public string fullText;
+}
+
 public class InterviewController : MonoBehaviour
 {
     public static InterviewController Instance;
@@ -35,13 +49,11 @@ public class InterviewController : MonoBehaviour
     
     [Header("Article Panel - Header Input")]
     [SerializeField] private GameObject enterHeaderPanel;
-    [SerializeField] private TMP_InputField inputHeader;
-    [SerializeField] private Button continueButtonHeader;
-    
+    [SerializeField] private Button[] headerButtons;
+
     [Header("Article Panel - Description Input")]
     [SerializeField] private GameObject enterDescriptionPanel;
-    [SerializeField] private TMP_InputField inputDescription;
-    [SerializeField] private Button continueButtonDescription;
+    [SerializeField] private Button[] descriptionButtons;
     
     [Header("Article Panel - Icon Selection")]
     [SerializeField] private GameObject enterIconPanel;
@@ -135,6 +147,67 @@ public class InterviewController : MonoBehaviour
         "Hi! Excited to talk today."
     };
 
+    private HeaderOption[] allHeaders = new HeaderOption[]
+{
+    new HeaderOption { shortText = "Socks union strike", fullText = "My socks demand vacation" },
+    new HeaderOption { shortText = "Homework referee case", fullText = "Referee ate my homework" },
+    new HeaderOption { shortText = "Inflated coach mystery", fullText = "Coach turned into balloon" },
+    new HeaderOption { shortText = "Talking bench wisdom", fullText = "Bench started giving advice" },
+    new HeaderOption { shortText = "Musical shoes story", fullText = "My shoes joined orchestra" },
+    new HeaderOption { shortText = "Bank goalpost moment", fullText = "Goalpost applied for loan" },
+    new HeaderOption { shortText = "Haunted ticket tale", fullText = "Stadium ghosts won tickets" },
+    new HeaderOption { shortText = "Mascot love scandal", fullText = "Mascot married the trophy" },
+    new HeaderOption { shortText = "Rude towel episode", fullText = "My towel learned sarcasm" },
+    new HeaderOption { shortText = "Fan chaos uprising", fullText = "Fans started a revolution" },
+    new HeaderOption { shortText = "Whistle talk session", fullText = "Interview with lost whistle" },
+    new HeaderOption { shortText = "Political bottle news", fullText = "My bottle joined politics" },
+    new HeaderOption { shortText = "Sky grass debate", fullText = "Grass challenged the sky" },
+    new HeaderOption { shortText = "Stubborn helmet case", fullText = "Helmet refuses instructions" },
+    new HeaderOption { shortText = "Feline striker story", fullText = "Cat replaced our striker" },
+    new HeaderOption { shortText = "Taxpaying sneakers case", fullText = "My sneakers filed taxes" },
+    new HeaderOption { shortText = "Wet haircut saga", fullText = "Rain postponed my haircut" },
+    new HeaderOption { shortText = "Coach pigeon phobia", fullText = "My coach fears pigeons" },
+    new HeaderOption { shortText = "Guilty gloves tale", fullText = "Gloves confessed to crimes" },
+    new HeaderOption { shortText = "Circus referee show", fullText = "Referee joined a circus" },
+    new HeaderOption { shortText = "Bottle celebrity case", fullText = "Water bottle found fame" },
+    new HeaderOption { shortText = "Grass influencer trend", fullText = "The grass invented TikTok" },
+    new HeaderOption { shortText = "Shadow theft story", fullText = "My shadow stole the ball" },
+    new HeaderOption { shortText = "Ghost locker rumor", fullText = "Locker room became haunted" },
+    new HeaderOption { shortText = "Dolphin coach myth", fullText = "My coach speaks dolphin" }
+};
+
+private DescriptionOption[] allDescriptions = new DescriptionOption[]
+{
+    new DescriptionOption { shortText = "Vacation socks rebellion", fullText = "My socks planned a trip to Hawaii after realizing they'd survived more seasons than our team captain." },
+    new DescriptionOption { shortText = "Dog whistle drama", fullText = "The referee said the dog ate his whistle, but the dog denies all allegations on live TV." },
+    new DescriptionOption { shortText = "Coach air escape", fullText = "Our coach floated away mid-practice after too many sports drinks and motivational speeches." },
+    new DescriptionOption { shortText = "Wise bench talks", fullText = "The bench started giving life advice, but only to players who sat there in defeat." },
+    new DescriptionOption { shortText = "Jazz shoe concert", fullText = "My shoes started a jazz band using squeaks as instruments and ego as percussion." },
+    new DescriptionOption { shortText = "Financial goalpost crisis", fullText = "The goalpost applied for a bank loan to build emotional stability after years of hits." },
+    new DescriptionOption { shortText = "Ghost fan protest", fullText = "Ghosts in the stands demanded refunds because the halftime snacks were invisible." },
+    new DescriptionOption { shortText = "Trophy marriage tale", fullText = "The mascot and trophy now live happily and occasionally host motivational podcasts." },
+    new DescriptionOption { shortText = "Towel bullying story", fullText = "My towel began roasting my gym form so I replaced it with a kinder napkin." },
+    new DescriptionOption { shortText = "Fan chaos uprising", fullText = "The fans revolted after realizing their chants accidentally summoned seagulls instead of victory." },
+    new DescriptionOption { shortText = "Whistle confession leak", fullText = "We interviewed the missing whistle; it claims early retirement due to overblowing." },
+    new DescriptionOption { shortText = "Hydration movement news", fullText = "My water bottle started campaigning for hydration equality in all sports zones." },
+    new DescriptionOption { shortText = "Cloud conflict grass", fullText = "The grass filed a complaint against clouds for excessive shade during practice hours." },
+    new DescriptionOption { shortText = "Helmet silent protest", fullText = "My helmet started ignoring me after I forgot to thank it for every saved goal." },
+    new DescriptionOption { shortText = "Cat MVP recap", fullText = "The cat scored twice, knocked over Gatorade, and still demanded a post-match fish." },
+    new DescriptionOption { shortText = "Sneaker tax joke", fullText = "My sneakers filled tax forms claiming \"running expenses\" as emotional damage." },
+    new DescriptionOption { shortText = "Rain haircut delay", fullText = "Rain delayed not the match but my haircut, citing poor hairline weather conditions." },
+    new DescriptionOption { shortText = "Coach bird fear", fullText = "Coach now refuses to train near pigeons, calling them \"feathered chaos agents.\"" },
+    new DescriptionOption { shortText = "Guilty gloves case", fullText = "The gloves confessed to stealing attention during every slow-motion replay." },
+    new DescriptionOption { shortText = "Circus ref career", fullText = "Referee left the league to juggle flaming cones at the local circus." },
+    new DescriptionOption { shortText = "Bottle fame story", fullText = "My bottle went viral after spilling motivational quotes instead of water." },
+    new DescriptionOption { shortText = "Grass dance trend", fullText = "The grass uploaded a viral dance called \"Photosynthwave\" and became influencer of the year." },
+    new DescriptionOption { shortText = "Shadow takeover news", fullText = "My shadow became team captain after stealing every highlight." },
+    new DescriptionOption { shortText = "Haunted locker tale", fullText = "The locker room whispers at night about lost towels and vanished socks." },
+    new DescriptionOption { shortText = "Dolphin tactic myth", fullText = "Coach claims to speak fluent dolphin to improve underwater tactics." }
+};
+
+private HeaderOption[] selectedHeaders = new HeaderOption[3];
+private DescriptionOption[] selectedDescriptions = new DescriptionOption[3];
+    
     private string selectedOpponent1Text;
     private string selectedPlayer1Text;
 
@@ -163,16 +236,37 @@ public class InterviewController : MonoBehaviour
         PrepareUI();
         HideAllButtons();
         StartCoroutine(InterviewRoutine());
-    
-        inputHeader.onValueChanged.AddListener(OnHeaderInputChanged);
-        continueButtonHeader.onClick.AddListener(OnContinueHeaderClicked);
-        inputDescription.onValueChanged.AddListener(OnDescriptionInputChanged);
-        continueButtonDescription.onClick.AddListener(OnContinueDescriptionClicked);
-    
+
         nextButton.onClick.AddListener(OnNextIconClicked);
         previousButton.onClick.AddListener(OnPreviousIconClicked);
         continueButtonIcon.onClick.AddListener(OnContinueIconClicked);
         continueButtonIncome.onClick.AddListener(OnContinueIncomeClicked);
+    
+        for (int i = 0; i < headerButtons.Length; i++)
+        {
+            int index = i;
+            if (headerButtons[i] != null)
+            {
+                headerButtons[i].onClick.AddListener(() => OnHeaderButtonClicked(index));
+            }
+            else
+            {
+                Debug.Log($"headerButtons[{i}] is null");
+            }
+        }
+    
+        for (int i = 0; i < descriptionButtons.Length; i++)
+        {
+            int index = i;
+            if (descriptionButtons[i] != null)
+            {
+                descriptionButtons[i].onClick.AddListener(() => OnDescriptionButtonClicked(index));
+            }
+            else
+            {
+                Debug.Log($"descriptionButtons[{i}] is null");
+            }
+        }
     }
 
     private void PrepareUI()
@@ -469,11 +563,80 @@ public class InterviewController : MonoBehaviour
         DOTween.To(() => GetAlpha(articlePanel), x => SetAlpha(articlePanel, x), 1f, animationDuration);
         yield return new WaitForSeconds(animationDuration);
 
+        PrepareRandomHeaders();
         yield return StartCoroutine(ShowPanelWithChildren(enterHeaderPanel));
-        
-        continueButtonHeader.gameObject.SetActive(false);
-        inputHeader.text = "";
     }
+    private void PrepareRandomHeaders()
+{
+    List<HeaderOption> availableHeaders = new List<HeaderOption>(allHeaders);
+    
+    for (int i = 0; i < 3 && i < availableHeaders.Count; i++)
+    {
+        int randomIndex = Random.Range(0, availableHeaders.Count);
+        selectedHeaders[i] = availableHeaders[randomIndex];
+        availableHeaders.RemoveAt(randomIndex);
+        
+        if (headerButtons[i] != null)
+        {
+            TextMeshProUGUI buttonText = headerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+            if (buttonText != null)
+            {
+                buttonText.text = selectedHeaders[i].shortText;
+            }
+            else
+            {
+                Debug.Log($"TextMeshProUGUI not found in headerButtons[{i}]");
+            }
+        }
+        else
+        {
+            Debug.Log($"headerButtons[{i}] is null");
+        }
+    }
+}
+
+private void PrepareRandomDescriptions()
+{
+    List<DescriptionOption> availableDescriptions = new List<DescriptionOption>(allDescriptions);
+    
+    for (int i = 0; i < 3 && i < availableDescriptions.Count; i++)
+    {
+        int randomIndex = Random.Range(0, availableDescriptions.Count);
+        selectedDescriptions[i] = availableDescriptions[randomIndex];
+        availableDescriptions.RemoveAt(randomIndex);
+        
+        if (descriptionButtons[i] != null)
+        {
+            TextMeshProUGUI buttonText = descriptionButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+            if (buttonText != null)
+            {
+                buttonText.text = selectedDescriptions[i].shortText;
+            }
+            else
+            {
+                Debug.Log($"TextMeshProUGUI not found in descriptionButtons[{i}]");
+            }
+        }
+        else
+        {
+            Debug.Log($"descriptionButtons[{i}] is null");
+        }
+    }
+}
+
+private void OnHeaderButtonClicked(int index)
+{
+    savedHeader = selectedHeaders[index].fullText;
+    Debug.Log("Header saved: " + savedHeader);
+    StartCoroutine(ShowDescriptionPanel());
+}
+
+private void OnDescriptionButtonClicked(int index)
+{
+    savedDescription = selectedDescriptions[index].fullText;
+    Debug.Log("Description saved: " + savedDescription);
+    StartCoroutine(ShowIconPanel());
+}
 
     private IEnumerator ShowPanelWithChildren(GameObject panel)
     {
@@ -491,23 +654,6 @@ public class InterviewController : MonoBehaviour
         }
     }
 
-    private void OnHeaderInputChanged(string text)
-    {
-        if (!string.IsNullOrEmpty(text) && !continueButtonHeader.gameObject.activeSelf)
-        {
-            continueButtonHeader.gameObject.SetActive(true);
-            continueButtonHeader.transform.localScale = Vector3.zero;
-            continueButtonHeader.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
-        }
-    }
-
-    private void OnContinueHeaderClicked()
-    {
-        savedHeader = inputHeader.text;
-        Debug.Log("Header saved: " + savedHeader);
-        StartCoroutine(ShowDescriptionPanel());
-    }
-
     private IEnumerator ShowDescriptionPanel()
     {
         foreach (Transform child in enterHeaderPanel.transform)
@@ -517,29 +663,10 @@ public class InterviewController : MonoBehaviour
         yield return new WaitForSeconds(animationDuration);
         enterHeaderPanel.SetActive(false);
 
+        PrepareRandomDescriptions();
         yield return StartCoroutine(ShowPanelWithChildren(enterDescriptionPanel));
-        
-        continueButtonDescription.gameObject.SetActive(false);
-        inputDescription.text = "";
     }
-
-    private void OnDescriptionInputChanged(string text)
-    {
-        if (!string.IsNullOrEmpty(text) && !continueButtonDescription.gameObject.activeSelf)
-        {
-            continueButtonDescription.gameObject.SetActive(true);
-            continueButtonDescription.transform.localScale = Vector3.zero;
-            continueButtonDescription.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
-        }
-    }
-
-    private void OnContinueDescriptionClicked()
-    {
-        savedDescription = inputDescription.text;
-        Debug.Log("Description saved: " + savedDescription);
-        StartCoroutine(ShowIconPanel());
-    }
-
+    
     private IEnumerator ShowIconPanel()
     {
         foreach (Transform child in enterDescriptionPanel.transform)
