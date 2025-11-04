@@ -155,7 +155,7 @@ public class InterviewController : MonoBehaviour
     {
         Instance = this;
         
-        // Пофіксити анімації, пофіксити іконку персонажа, не появляється текст в ResultsPanel
+        // добавити ше якусь прокачку фейкову
     }
 
     private void Start()
@@ -720,6 +720,7 @@ public class InterviewController : MonoBehaviour
     if (WalletController.Instance != null)
     {
         WalletController.Instance.Money += earnedMoney;
+        WalletController.Instance.Reputation += earnedReputation;
     }
     else
     {

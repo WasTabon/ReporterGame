@@ -12,6 +12,10 @@ public class RoomsController : MonoBehaviour
     [SerializeField] private GameObject _buyPanel;
     [SerializeField] private TextMeshProUGUI _buyText;
     
+    [SerializeField] private TextMeshProUGUI _room1Text;
+    [SerializeField] private TextMeshProUGUI _room2Text;
+    [SerializeField] private TextMeshProUGUI _room3Text;
+    
     [SerializeField] private float panelDisplayDuration = 2f;
     
     private void Awake()
@@ -25,6 +29,7 @@ public class RoomsController : MonoBehaviour
         }
         
         LoadRooms();
+        UpdateRoomTexts();
         
         if (_buyPanel != null)
         {
@@ -42,6 +47,45 @@ public class RoomsController : MonoBehaviour
         {
             bool isPurchased = PlayerPrefs.GetInt($"room_{i}", 0) == 1;
             rooms[i].SetActive(isPurchased);
+        }
+    }
+
+    private void UpdateRoomTexts()
+    {
+        if (PlayerPrefs.GetInt("room_1", 0) == 1 && _room1Text != null)
+        {
+            _room1Text.text = "PURCHASED";
+        }
+        else
+        {
+            if (_room1Text == null)
+            {
+                Debug.Log("_room1Text is null");
+            }
+        }
+        
+        if (PlayerPrefs.GetInt("room_2", 0) == 1 && _room2Text != null)
+        {
+            _room2Text.text = "PURCHASED";
+        }
+        else
+        {
+            if (_room2Text == null)
+            {
+                Debug.Log("_room2Text is null");
+            }
+        }
+        
+        if (PlayerPrefs.GetInt("room_3", 0) == 1 && _room3Text != null)
+        {
+            _room3Text.text = "PURCHASED";
+        }
+        else
+        {
+            if (_room3Text == null)
+            {
+                Debug.Log("_room3Text is null");
+            }
         }
     }
 
@@ -97,6 +141,7 @@ public class RoomsController : MonoBehaviour
                     Debug.Log("InterviewController.Instance is null");
                 }
                 
+                UpdateRoomText(roomIndex);
                 ShowBuyPanel("Room purchased successfully!");
             }
             else
@@ -107,6 +152,22 @@ public class RoomsController : MonoBehaviour
         else
         {
             Debug.Log("WalletController.Instance is null");
+        }
+    }
+
+    private void UpdateRoomText(int roomIndex)
+    {
+        if (roomIndex == 1 && _room1Text != null)
+        {
+            _room1Text.text = "PURCHASED";
+        }
+        else if (roomIndex == 2 && _room2Text != null)
+        {
+            _room2Text.text = "PURCHASED";
+        }
+        else if (roomIndex == 3 && _room3Text != null)
+        {
+            _room3Text.text = "PURCHASED";
         }
     }
 

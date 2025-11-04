@@ -18,11 +18,26 @@ public class WalletController : MonoBehaviour
     
     private int _money;
     
+    public int Reputation
+    {
+        get => _reputation;
+
+        set
+        {
+            _reputation = value;
+            PlayerPrefs.SetInt("reputation", _reputation);
+            PlayerPrefs.Save();
+        }
+    }
+    
+    private int _reputation;
+    
     private void Awake()
     {
         Instance = this;
         
         _money = PlayerPrefs.GetInt("money", 100);
+        _reputation = PlayerPrefs.GetInt("reputation", 100);
     }
 
     [ContextMenu("Add Money")]
