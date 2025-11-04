@@ -6,11 +6,14 @@ public class ReputationController : MonoBehaviour
     [SerializeField] private int _level;
     [SerializeField] private GameObject _buyPanel;
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private TextMeshProUGUI _reputationText;
 
     private float _timer;
     
     private void Update()
     {
+        _reputationText.text = $"{WalletController.Instance.Reputation}";
+        
         _timer += Time.deltaTime;
         
         if (_timer >= 1f)
