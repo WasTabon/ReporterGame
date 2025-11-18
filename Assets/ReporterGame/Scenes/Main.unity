@@ -2074,11 +2074,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f54ba2a516b21743a82ca26f80c0db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _donateId: com.htcpurchases.coinsmain
-  loadingButton: {fileID: 0}
+  _donateId: com.24reporter.coinsextra
+  loadingButton: {fileID: 401780989}
   buySound: {fileID: 0}
   buttonText: {fileID: 0}
-  panel: {fileID: 0}
+  panel: {fileID: 1947641492}
 --- !u!1001 &75169084
 PrefabInstance:
   m_ObjectHideFlags: 0
