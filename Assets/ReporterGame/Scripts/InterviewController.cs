@@ -856,7 +856,7 @@ private void OnDescriptionButtonClicked(int index)
 
     if (incomeMoneyText != null)
     {
-        incomeMoneyText.text = "Money: " + earnedMoney.ToString();
+        incomeMoneyText.text = earnedMoney.ToString();
         incomeMoneyText.gameObject.SetActive(true);
         incomeMoneyText.transform.localScale = Vector3.zero;
         incomeMoneyText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
@@ -869,7 +869,7 @@ private void OnDescriptionButtonClicked(int index)
 
     if (incomeReputationText != null)
     {
-        incomeReputationText.text = "Reputation: " + earnedReputation.ToString();
+        incomeReputationText.text = earnedReputation.ToString();
         incomeReputationText.gameObject.SetActive(true);
         incomeReputationText.transform.localScale = Vector3.zero;
         incomeReputationText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
