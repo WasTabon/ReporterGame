@@ -267,6 +267,13 @@ MonoBehaviour:
     short_question: Fan reaction
     answer: Therapy first, then maybe a cautious autograph.
   personSprites:
-  - {fileID: 21300000, guid: 140e6937f107d7243a1b876f3f83436f, type: 3}
-  - {fileID: 21300000, guid: db8a14a694199474f870b8c367bd57d9, type: 3}
-  - {fileID: 21300000, guid: 15b662e6d8a869442bc451d89ae67f4c, type: 3}
+  - {fileID: 21300000, guid: ac072f4a3624aa14e824e9e345544666, type: 3}
+  - {fileID: 21300000, guid: 1628ba41a07531e4e955e57503629588, type: 3}
+  - {fileID: 21300000, guid: a799e85a51e43604d9834549adb14c67, type: 3}
+  - {fileID: 21300000, guid: 6b7ef8faffe9af846b1ee7f186ef06a2, type: 3}
+  - {fileID: 21300000, guid: e976bb3231bfa104bb32b38e0f3c973d, type: 3}
+  - {fileID: 21300000, guid: 0ca24367be1d4f24b966e9d518895a78, type: 3}
+  - {fileID: 21300000, guid: 728c369777f9f434d91860b7a396aa80, type: 3}
+  - {fileID: 21300000, guid: 71574b2bb35dc2541bd084018d21c981, type: 3}
+  - {fileID: 21300000, guid: 6fd6e3e1171a4c74098b642999430efd, type: 3}
+  - {fileID: 21300000, guid: 37d2fb823592ada4e84ba22a19a488fb, type: 3}

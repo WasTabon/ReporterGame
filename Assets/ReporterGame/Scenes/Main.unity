@@ -2077,7 +2077,7 @@ MonoBehaviour:
   _donateId: com.24reporter.coinsextra
   loadingButton: {fileID: 401780989}
   buySound: {fileID: 0}
-  buttonText: {fileID: 0}
+  buttonText: {fileID: 95501331}
   panel: {fileID: 1947641492}
 --- !u!1001 &75169084
 PrefabInstance:
@@ -6525,9 +6525,15 @@ MonoBehaviour:
   previousButton: {fileID: 1211129704}
   continueButtonIcon: {fileID: 1115710397}
   iconSprites:
-  - {fileID: 21300000, guid: 140e6937f107d7243a1b876f3f83436f, type: 3}
-  - {fileID: 21300000, guid: db8a14a694199474f870b8c367bd57d9, type: 3}
-  - {fileID: 21300000, guid: 15b662e6d8a869442bc451d89ae67f4c, type: 3}
+  - {fileID: 21300000, guid: a0ec5af3ea03aab4fbd6a9e06724971f, type: 3}
+  - {fileID: 21300000, guid: e09770fbdf133854eb1d42dfc299e3e0, type: 3}
+  - {fileID: 21300000, guid: 1809b9ada1095684dbf086e78a9caf9a, type: 3}
+  - {fileID: 21300000, guid: 15d5ce5d933a33147aa471a5e3dc1a77, type: 3}
+  - {fileID: 21300000, guid: d7552db503529784d82f06c7d7a9e82e, type: 3}
+  - {fileID: 21300000, guid: 976f6f0d8af1e0b409a72f397a6ce042, type: 3}
+  - {fileID: 21300000, guid: d65d7ee843054e4499496b80cd788894, type: 3}
+  - {fileID: 21300000, guid: f842884c59759f149a037722e91ee8c1, type: 3}
+  - {fileID: 21300000, guid: d7ecb001f8f5e9a4089d560f34a408e5, type: 3}
   resultsPanel: {fileID: 1325149220}
   resultsTitleText: {fileID: 1497539391}
   articleHeader: {fileID: 1210779048}
@@ -14775,7 +14781,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU BOUGHT NEW ROOM
+  m_text: YOU GOT 500$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69c672792d01a4b44b64694c8e97abc5, type: 2}
   m_sharedMaterial: {fileID: 2108631216594011940, guid: 69c672792d01a4b44b64694c8e97abc5, type: 2}
@@ -33658,6 +33664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyText: {fileID: 1671500045}
+  _moneyText2: {fileID: 1020201914}
+  _reputationText: {fileID: 1239399081}
 --- !u!1 &2034810551
 GameObject:
   m_ObjectHideFlags: 0
