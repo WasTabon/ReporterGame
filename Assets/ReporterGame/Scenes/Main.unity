@@ -489,7 +489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &26212969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5873,6 +5873,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290800817}
   m_CullTransparentMesh: 1
+--- !u!1 &294235126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 294235127}
+  - component: {fileID: 294235129}
+  - component: {fileID: 294235128}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &294235127
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294235126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 540668152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.15470941, y: 0.2934815}
+  m_AnchorMax: {x: 0.15470941, y: 0.2934815}
+  m_AnchoredPosition: {x: 2, y: -3.380005}
+  m_SizeDelta: {x: 577.3741, y: 627.2429}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &294235128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294235126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9114588393b154640bf0a93c2bfd3e78, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &294235129
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294235126}
+  m_CullTransparentMesh: 1
 --- !u!1001 &309258362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6540,6 +6615,7 @@ MonoBehaviour:
   articleDescription: {fileID: 1568865195}
   articleIcon: {fileID: 1557707632}
   article: {fileID: 1360349236}
+  statisticsPanel: {fileID: 0}
   viewHandler: {fileID: 672367957}
   likesHandler: {fileID: 1344494135}
   dislikesHandler: {fileID: 1623267509}
@@ -10017,12 +10093,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 1737572123460851674, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1311282
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737572123460851674, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.80100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737572123460851674, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.1311282
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737572123460851674, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.80100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737572123460851674, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -850
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1737572123460851674, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -328.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1938343125336889134, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
       propertyPath: m_Pivot.x
@@ -10199,7 +10291,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2395944477604651069, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1938343125336889134, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 294235127}
+    - targetCorrespondingSourceObject: {fileID: 1938343125336889134, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 634908806}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdc425bb53608f847890f55c857e1e30, type: 3}
 --- !u!224 &540668152 stripped
@@ -11724,6 +11822,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634734502}
   m_CullTransparentMesh: 1
+--- !u!1 &634908805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634908806}
+  - component: {fileID: 634908808}
+  - component: {fileID: 634908807}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &634908806
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634908805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 540668152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.15470941, y: 0.2934815}
+  m_AnchorMax: {x: 0.15470941, y: 0.2934815}
+  m_AnchoredPosition: {x: 2, y: -3.380005}
+  m_SizeDelta: {x: 577.3741, y: 627.2429}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &634908807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634908805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ae60cc1bc92e8f847966d57b575ad331, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &634908808
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634908805}
+  m_CullTransparentMesh: 1
 --- !u!1 &639613983
 GameObject:
   m_ObjectHideFlags: 0
@@ -11902,7 +12075,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69c672792d01a4b44b64694c8e97abc5, type: 2}
   m_sharedMaterial: {fileID: 2108631216594011940, guid: 69c672792d01a4b44b64694c8e97abc5, type: 2}
@@ -25242,35 +25415,50 @@ MonoBehaviour:
   nextButton: {fileID: 540668155}
   nextButtonText: {fileID: 540668154}
   tutorialSteps:
-  - stepText: In this game, you play as a reporter interviewing various sports teams.
-    objectsToActivate: []
+  - stepText: In this game, you run your own company dedicated to writing news in
+      the world of sports.
+    objectsToActivate:
+    - {fileID: 634908805}
     objectsToDeactivate: []
-  - stepText: "Interview requests will appear randomly in your office. The more upgraded
-      your office is, the more interview opportunities you\u2019ll receive."
-    objectsToActivate: []
-    objectsToDeactivate: []
-  - stepText: "When you press the interview start button, you\u2019ll need to choose
-      one of three available questions."
-    objectsToActivate: []
-    objectsToDeactivate: []
-  - stepText: "After the team answers, you\u2019ll create an article about the event
-      - come up with a title, a description, and choose a photo for the piece."
-    objectsToActivate: []
-    objectsToDeactivate: []
-  - stepText: "Based on your article, you\u2019ll receive feedback from readers.
-      This feedback affects your reputation and income."
-    objectsToActivate: []
-    objectsToDeactivate: []
-  - stepText: You can use money to upgrade your office and unlock new sports teams
-      and events.
-    objectsToActivate: []
-    objectsToDeactivate: []
-  - stepText: "Reputation allows you to increase your company\u2019s overall earnings."
-    objectsToActivate: []
-    objectsToDeactivate: []
+  - stepText: You need to upgrade your studio to gain access to more exclusive events.
+    objectsToActivate:
+    - {fileID: 294235126}
+    objectsToDeactivate:
+    - {fileID: 634908805}
+  - stepText: From time to time, you will receive offers to conduct interviews.
+    objectsToActivate:
+    - {fileID: 634908805}
+    objectsToDeactivate:
+    - {fileID: 294235126}
+  - stepText: There, you will have to choose one of several questions and then create
+      an article.
+    objectsToActivate:
+    - {fileID: 294235126}
+    objectsToDeactivate:
+    - {fileID: 634908805}
+  - stepText: To create an article, you must select a suitable title, description,
+      and icon.
+    objectsToActivate:
+    - {fileID: 634908805}
+    objectsToDeactivate:
+    - {fileID: 294235126}
+  - stepText: After that, depending on the quality and type of your article, you
+      will earn money and reputation.
+    objectsToActivate:
+    - {fileID: 294235126}
+    objectsToDeactivate:
+    - {fileID: 634908805}
+  - stepText: You can use your money and reputation to upgrade your company even
+      further.
+    objectsToActivate:
+    - {fileID: 634908805}
+    objectsToDeactivate:
+    - {fileID: 294235126}
   - stepText: Good luck.
-    objectsToActivate: []
-    objectsToDeactivate: []
+    objectsToActivate:
+    - {fileID: 294235126}
+    objectsToDeactivate:
+    - {fileID: 634908805}
 --- !u!1001 &1483967355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28723,7 +28911,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69c672792d01a4b44b64694c8e97abc5, type: 2}
   m_sharedMaterial: {fileID: 2108631216594011940, guid: 69c672792d01a4b44b64694c8e97abc5, type: 2}
@@ -31588,7 +31776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69c672792d01a4b44b64694c8e97abc5, type: 2}
   m_sharedMaterial: {fileID: 2108631216594011940, guid: 69c672792d01a4b44b64694c8e97abc5, type: 2}

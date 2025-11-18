@@ -74,6 +74,7 @@ public class InterviewController : MonoBehaviour
     [SerializeField] private RectTransform article;
     
     [Header("Results Panel - Statistics")]
+    [SerializeField] private GameObject statisticsPanel;
     [SerializeField] private RectTransform viewHandler;
     [SerializeField] private RectTransform likesHandler;
     [SerializeField] private RectTransform dislikesHandler;
@@ -727,25 +728,16 @@ private void OnDescriptionButtonClicked(int index)
         yield return new WaitForSeconds(animationDuration);
         articlePanel.SetActive(false);
 
-        foreach (Transform child in resultsPanel.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-
         resultsPanel.SetActive(true);
         DOTween.To(() => GetAlpha(resultsPanel), x => SetAlpha(resultsPanel, x), 1f, animationDuration);
         yield return new WaitForSeconds(animationDuration);
-        
+    
         if (resultsTitleText != null)
         {
             resultsTitleText.gameObject.SetActive(true);
             resultsTitleText.transform.localScale = Vector3.zero;
             resultsTitleText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
             yield return new WaitForSeconds(animationDuration);
-        }
-        else
-        {
-            Debug.Log("resultsTitleText is null");
         }
 
         articleHeader.text = savedHeader;
@@ -754,12 +746,20 @@ private void OnDescriptionButtonClicked(int index)
 
         Vector3 originalScale = article.localScale;
         Vector3 originalPosition = article.localPosition;
-        
+    
         article.localScale = originalScale * 3f;
         article.gameObject.SetActive(true);
-        
+    
         article.DOScale(originalScale, 0.3f).SetEase(Ease.OutBounce);
         yield return new WaitForSeconds(0.3f);
+
+        if (statisticsPanel != null)
+        {
+            statisticsPanel.SetActive(true);
+            statisticsPanel.transform.localScale = Vector3.zero;
+            statisticsPanel.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+            yield return new WaitForSeconds(animationDuration);
+        }
 
         yield return StartCoroutine(ShowStatHandler(viewHandler, 1, 9999));
         yield return StartCoroutine(ShowStatHandler(likesHandler, 0, savedViews));
