@@ -1,0 +1,272 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e834d69a138044e81331800e85fe78, type: 3}
+  m_Name: NewInterviewData
+  m_EditorClassIdentifier: 
+  questions:
+  - id: 1
+    main_question: If your shoes could file a complaint about today's match, what
+      would be in the report?
+    short_question: What shoes say
+    answer: They would note areas of improvement and needed support.
+  - id: 2
+    main_question: Do you think your hairstyle contributed to the team's defeat,
+      or was it just gravity again?
+    short_question: Blame the hair
+    answer: It had no impact; performance depends on focus and teamwork.
+  - id: 3
+    main_question: If aliens invited you to play a match on Mars, what would be your
+      first concern?
+    short_question: Game on Mars
+    answer: I would be concerned about adapting to new conditions safely.
+  - id: 4
+    main_question: How would you describe your performance today using only farm
+      animal noises?
+    short_question: Describe with moo
+    answer: I would focus on areas for improvement in skill and focus.
+  - id: 5
+    main_question: If your golf ball had feelings, do you think it would forgive
+      you for what happened on hole 9?
+    short_question: Forgive the ball
+    answer: It would note that accuracy and consistency need work.
+  - id: 6
+    main_question: Do you consider sweating a skill, a curse, or a form of modern
+      art?
+    short_question: Sweat philosophy
+    answer: Sweat reflects effort and intensity in physical performance.
+  - id: 7
+    main_question: If losing burned calories, how fit do you think you'd be right
+      now?
+    short_question: Calories of losing
+    answer: Fitness depends on consistent training, not individual outcomes.
+  - id: 8
+    main_question: What's your secret to maintaining eye contact with snow while
+      falling face-first into it?
+    short_question: Snow stare tips
+    answer: Focus and composure are key to recovering quickly.
+  - id: 9
+    main_question: Do you believe your racket understands your emotional pain, or
+      is it gaslighting you?
+    short_question: Racket emotions
+    answer: Equipment does not influence emotions; preparation matters more.
+  - id: 10
+    main_question: If you could rename your bow after today's performance, what would
+      you call it?
+    short_question: Rename the bow
+    answer: It would reflect consistent improvement and reliability.
+  - id: 11
+    main_question: During meditation, do you visualize trophies or just the sound
+      of your coach screaming?
+    short_question: Meditation vision
+    answer: I focus on clarity, concentration, and mental preparation.
+  - id: 12
+    main_question: "If your dumbbells started talking mid-set, what would they say
+      to motivate\u2014or insult\u2014you?"
+    short_question: Talking dumbbells
+    answer: They would remind me to maintain form and steady effort.
+  - id: 13
+    main_question: Would you rather win the championship or get unlimited free snacks
+      for life?
+    short_question: Snacks or victory
+    answer: Winning is the priority; rewards motivate continued effort.
+  - id: 14
+    main_question: Does your horse ever judge you silently, or does it prefer passive-aggressive
+      neighing?
+    short_question: Judgy horse
+    answer: Animals respond naturally; I focus on technique and care.
+  - id: 15
+    main_question: If you could replace water in the pool with any other liquid,
+      what would it be and why?
+    short_question: Pool liquid swap
+    answer: Water is best; safety and consistency outweigh novelty.
+  - id: 16
+    main_question: If your coach had a volume knob, what level would you set it to
+      during halftime?
+    short_question: Coach volume
+    answer: I would keep communication clear without causing distraction.
+  - id: 17
+    main_question: Do you stretch before games or just emotionally prepare to disappoint
+      people?
+    short_question: Pre-game ritual
+    answer: I focus on proper warm-up and mental readiness for performance.
+  - id: 18
+    main_question: If your last mistake were a flavor of ice cream, what would it
+      taste like?
+    short_question: Failure flavor
+    answer: Mistakes provide lessons to improve future decision-making.
+  - id: 19
+    main_question: Would you say your victory dance scares your opponents or just
+      the general public?
+    short_question: Victory dance fear
+    answer: I aim to celebrate respectfully without distracting others.
+  - id: 20
+    main_question: If you could add background music to your performance, what song
+      would play during your worst moment?
+    short_question: Fail soundtrack
+    answer: Music is secondary; focus remains on correcting errors.
+  - id: 21
+    main_question: If your rival became your roommate, what's the first house rule
+      you'd enforce?
+    short_question: Rival roommate rule
+    answer: Respect and personal space would be clearly established.
+  - id: 22
+    main_question: When the referee blew the whistle, did you hear it as motivation
+      or a personal attack?
+    short_question: Whistle feelings
+    answer: I view calls objectively and adjust my performance accordingly.
+  - id: 23
+    main_question: If your career had a mascot, what strange animal would represent
+      it?
+    short_question: Career mascot
+    answer: It would reflect perseverance and consistent effort over time.
+  - id: 24
+    main_question: If your energy drink could talk, what secrets would it expose
+      about you?
+    short_question: Talking energy drink
+    answer: It would note preparation habits and consistent hydration.
+  - id: 25
+    main_question: Would you rather miss the goal dramatically or win so boringly
+      no one remembers?
+    short_question: Epic miss or dull win
+    answer: I focus on achieving results with effective strategy.
+  - id: 26
+    main_question: If you could bribe luck, what would you offer it before the match?
+    short_question: Bribe luck
+    answer: Effort, preparation, and strategy create the best outcomes.
+  - id: 27
+    main_question: How many motivational quotes does it take before you actually
+      feel motivated?
+    short_question: Motivation math
+    answer: Motivation comes from personal goals, not external quotes.
+  - id: 28
+    main_question: If your game plan were a movie, what genre would it be?
+    short_question: Game plan genre
+    answer: It would be a focused drama on planning and execution.
+  - id: 29
+    main_question: Would you say your victory was skill, luck, or a cosmic clerical
+      error?
+    short_question: Win explanation
+    answer: Skill and preparation contributed more than chance.
+  - id: 30
+    main_question: If your fans could see your browser history before the game, would
+      they still cheer?
+    short_question: Fan loyalty test
+    answer: Fans support consistent effort, not trivial distractions.
+  - id: 31
+    main_question: If your jersey could talk, what would it say about your performance
+      today?
+    short_question: Talking jersey
+    answer: It would highlight focus, effort, and moments for improvement.
+  - id: 32
+    main_question: Would you say your strategy was bold, confused, or just heavily
+      caffeinated?
+    short_question: Strategy type
+    answer: Strategy was deliberate and based on careful planning.
+  - id: 33
+    main_question: If your team were a pizza, what toppings would represent today's
+      effort?
+    short_question: Team pizza
+    answer: Balance of strengths and weaknesses defined today's performance.
+  - id: 34
+    main_question: How do you mentally recover from realizing the mascot outperformed
+      you?
+    short_question: Mascot humiliation
+    answer: Reflection and focused practice help improve next performance.
+  - id: 35
+    main_question: If post-match interviews were a sport, do you think you'd finally
+      win something?
+    short_question: Interview champion
+    answer: I approach interviews with honesty and professional insight.
+  - id: 36
+    main_question: If your celebration dance caused minor earthquakes, would you
+      tone it down or double it?
+    short_question: Dance disaster
+    answer: I would celebrate respectfully without causing disruption.
+  - id: 37
+    main_question: Would you describe your teamwork as telepathic or telepathetic?
+    short_question: Team telepathy
+    answer: Teamwork relies on communication and coordinated effort.
+  - id: 38
+    main_question: If the referee had to rate your acting skills during fouls, what
+      score would you get?
+    short_question: Foul acting score
+    answer: I focus on fair play rather than influencing referee judgment.
+  - id: 39
+    main_question: Do you think your lucky charm is working, or has it joined the
+      opponent's side?
+    short_question: Lucky charm status
+    answer: Success is earned through preparation, not superstition.
+  - id: 40
+    main_question: If your career was a cooking recipe, what would be the secret
+      ingredient?
+    short_question: Career recipe
+    answer: Consistency and hard work form the basis of all success.
+  - id: 41
+    main_question: If your opponent were a vegetable, what kind would they be and
+      why?
+    short_question: Opponent vegetable
+    answer: Focus on their skill and strategy rather than labels.
+  - id: 42
+    main_question: Would you ever consider blaming Mercury retrograde for your defense
+      strategy?
+    short_question: Mercury excuse
+    answer: I take responsibility for decisions and adjust accordingly.
+  - id: 43
+    main_question: If you could time travel to fix one mistake from today, would
+      you or just pretend it was 'tactical'?
+    short_question: Time travel fix
+    answer: I learn from mistakes and apply lessons to future actions.
+  - id: 44
+    main_question: When the crowd booed, did you interpret it as negative feedback
+      or free motivation?
+    short_question: Crowd boos
+    answer: I focus on self-improvement rather than audience reaction.
+  - id: 45
+    main_question: If your coach could be replaced by an AI, how long before it quits
+      on you?
+    short_question: AI coach lifespan
+    answer: AI guidance would depend on objective performance data.
+  - id: 46
+    main_question: Do you train harder for the game or for the post-game memes?
+    short_question: Training purpose
+    answer: Training is always focused on performance improvement.
+  - id: 47
+    main_question: If your pre-game ritual were a TikTok trend, would anyone join
+      in?
+    short_question: Ritual trend
+    answer: Rituals are personal; their effectiveness is what matters.
+  - id: 48
+    main_question: If your water bottle had feelings, would it be proud or terrified
+      of you?
+    short_question: Water bottle mood
+    answer: It would reflect careful hydration habits and respect for equipment.
+  - id: 49
+    main_question: Would you call your warm-up routine 'elite preparation' or 'random
+      flailing'?
+    short_question: Warm-up style
+    answer: I follow structured warm-ups to optimize performance safely.
+  - id: 50
+    main_question: If your biggest fan met you today, do you think they'd stay your
+      fan or need therapy?
+    short_question: Fan reaction
+    answer: They would appreciate consistent effort and professional conduct.
+  personSprites:
+  - {fileID: 21300000, guid: ac072f4a3624aa14e824e9e345544666, type: 3}
+  - {fileID: 21300000, guid: 1628ba41a07531e4e955e57503629588, type: 3}
+  - {fileID: 21300000, guid: a799e85a51e43604d9834549adb14c67, type: 3}
+  - {fileID: 21300000, guid: 6b7ef8faffe9af846b1ee7f186ef06a2, type: 3}
+  - {fileID: 21300000, guid: e976bb3231bfa104bb32b38e0f3c973d, type: 3}
+  - {fileID: 21300000, guid: 0ca24367be1d4f24b966e9d518895a78, type: 3}
+  - {fileID: 21300000, guid: 728c369777f9f434d91860b7a396aa80, type: 3}
+  - {fileID: 21300000, guid: 71574b2bb35dc2541bd084018d21c981, type: 3}
+  - {fileID: 21300000, guid: 6fd6e3e1171a4c74098b642999430efd, type: 3}
+  - {fileID: 21300000, guid: 37d2fb823592ada4e84ba22a19a488fb, type: 3}

@@ -121,93 +121,68 @@ public class InterviewController : MonoBehaviour
 
     private string[] opponent1Texts = new string[]
     {
-        "Hi! Thanks for having me.",
-        "Hello! I'm ready to begin.",
-        "Hey! Glad to be here.",
-        "Hi there! Excited for this.",
-        "Hello! I'm happy to join.",
-        "Hey! I've been looking forward.",
-        "Hi! Great to be here today.",
-        "Hello! Thanks for inviting me.",
-        "Hey there! I'm all set.",
-        "Hi! Ready when you are.",
-        "Hello! Let's get going now.",
-        "Hey! I'm ready to talk.",
-        "Hi there! It's great to be here.",
-        "Hello! Thanks for this chance.",
-        "Hey! Nice to meet you too.",
-        "Hi! Appreciate the invite.",
-        "Hello! I'm feeling good today.",
-        "Hey there! Ready to start now.",
-        "Hi! Let's do this.",
-        "Hello! I'm here and ready.",
-        "Hey! Thanks for having me!",
-        "Hi there! So glad to join.",
-        "Hello! Great to be part of this.",
-        "Hey! I'm good to start.",
-        "Hi! Excited to talk today."
+        "Hello, the match was intense today.",
+        "Hi, that was a tight game out there.",
+        "Hello, the match felt very balanced.",
+        "Hi, the pace today was really high.",
+        "Hello, that game demanded full focus.",
+        "Hi, both sides pushed hard today.",
+        "Hello, the match was tough but fair.",
+        "Hi, the tempo today was impressive.",
+        "Hello, that game required precision.",
+        "Hi, the match showed strong effort."
     };
 
     private HeaderOption[] allHeaders = new HeaderOption[]
-{
-    new HeaderOption { shortText = "Socks union strike", fullText = "My socks demand vacation" },
-    new HeaderOption { shortText = "Homework referee case", fullText = "Referee ate my homework" },
-    new HeaderOption { shortText = "Inflated coach mystery", fullText = "Coach turned into balloon" },
-    new HeaderOption { shortText = "Talking bench wisdom", fullText = "Bench started giving advice" },
-    new HeaderOption { shortText = "Musical shoes story", fullText = "My shoes joined orchestra" },
-    new HeaderOption { shortText = "Bank goalpost moment", fullText = "Goalpost applied for loan" },
-    new HeaderOption { shortText = "Haunted ticket tale", fullText = "Stadium ghosts won tickets" },
-    new HeaderOption { shortText = "Mascot love scandal", fullText = "Mascot married the trophy" },
-    new HeaderOption { shortText = "Rude towel episode", fullText = "My towel learned sarcasm" },
-    new HeaderOption { shortText = "Fan chaos uprising", fullText = "Fans started a revolution" },
-    new HeaderOption { shortText = "Whistle talk session", fullText = "Interview with lost whistle" },
-    new HeaderOption { shortText = "Political bottle news", fullText = "My bottle joined politics" },
-    new HeaderOption { shortText = "Sky grass debate", fullText = "Grass challenged the sky" },
-    new HeaderOption { shortText = "Stubborn helmet case", fullText = "Helmet refuses instructions" },
-    new HeaderOption { shortText = "Feline striker story", fullText = "Cat replaced our striker" },
-    new HeaderOption { shortText = "Taxpaying sneakers case", fullText = "My sneakers filed taxes" },
-    new HeaderOption { shortText = "Wet haircut saga", fullText = "Rain postponed my haircut" },
-    new HeaderOption { shortText = "Coach pigeon phobia", fullText = "My coach fears pigeons" },
-    new HeaderOption { shortText = "Guilty gloves tale", fullText = "Gloves confessed to crimes" },
-    new HeaderOption { shortText = "Circus referee show", fullText = "Referee joined a circus" },
-    new HeaderOption { shortText = "Bottle celebrity case", fullText = "Water bottle found fame" },
-    new HeaderOption { shortText = "Grass influencer trend", fullText = "The grass invented TikTok" },
-    new HeaderOption { shortText = "Shadow theft story", fullText = "My shadow stole the ball" },
-    new HeaderOption { shortText = "Ghost locker rumor", fullText = "Locker room became haunted" },
-    new HeaderOption { shortText = "Dolphin coach myth", fullText = "My coach speaks dolphin" }
-};
+    {
+        new HeaderOption { shortText = "Performance review", fullText = "Athlete discusses today's performance" },
+        new HeaderOption { shortText = "Match analysis", fullText = "Breaking down the game strategy" },
+        new HeaderOption { shortText = "Training insights", fullText = "Behind the scenes preparation" },
+        new HeaderOption { shortText = "Team dynamics", fullText = "How teamwork shaped the outcome" },
+        new HeaderOption { shortText = "Mental preparation", fullText = "The psychology of competition" },
+        new HeaderOption { shortText = "Equipment matters", fullText = "Gear choices and their impact" },
+        new HeaderOption { shortText = "Coach influence", fullText = "Guidance that made the difference" },
+        new HeaderOption { shortText = "Recovery methods", fullText = "Staying sharp after intense play" },
+        new HeaderOption { shortText = "Pressure handling", fullText = "Managing expectations and stress" },
+        new HeaderOption { shortText = "Tactical decisions", fullText = "Key moments that changed everything" },
+        new HeaderOption { shortText = "Physical condition", fullText = "Fitness levels and stamina" },
+        new HeaderOption { shortText = "Fan support", fullText = "Crowd energy and motivation" },
+        new HeaderOption { shortText = "Opponent respect", fullText = "Acknowledging the competition" },
+        new HeaderOption { shortText = "Future goals", fullText = "What comes next in training" },
+        new HeaderOption { shortText = "Mistake lessons", fullText = "Learning from today's errors" },
+        new HeaderOption { shortText = "Victory factors", fullText = "What led to success today" },
+        new HeaderOption { shortText = "Routine importance", fullText = "Pre-game rituals and habits" },
+        new HeaderOption { shortText = "Injury concerns", fullText = "Dealing with physical challenges" },
+        new HeaderOption { shortText = "Weather impact", fullText = "How conditions affected play" },
+        new HeaderOption { shortText = "Season outlook", fullText = "Long-term goals and planning" }
+    };
 
-private DescriptionOption[] allDescriptions = new DescriptionOption[]
-{
-    new DescriptionOption { shortText = "Vacation socks rebellion", fullText = "My socks planned a trip to Hawaii after realizing they'd survived more seasons than our team captain." },
-    new DescriptionOption { shortText = "Dog whistle drama", fullText = "The referee said the dog ate his whistle, but the dog denies all allegations on live TV." },
-    new DescriptionOption { shortText = "Coach air escape", fullText = "Our coach floated away mid-practice after too many sports drinks and motivational speeches." },
-    new DescriptionOption { shortText = "Wise bench talks", fullText = "The bench started giving life advice, but only to players who sat there in defeat." },
-    new DescriptionOption { shortText = "Jazz shoe concert", fullText = "My shoes started a jazz band using squeaks as instruments and ego as percussion." },
-    new DescriptionOption { shortText = "Financial goalpost crisis", fullText = "The goalpost applied for a bank loan to build emotional stability after years of hits." },
-    new DescriptionOption { shortText = "Ghost fan protest", fullText = "Ghosts in the stands demanded refunds because the halftime snacks were invisible." },
-    new DescriptionOption { shortText = "Trophy marriage tale", fullText = "The mascot and trophy now live happily and occasionally host motivational podcasts." },
-    new DescriptionOption { shortText = "Towel bullying story", fullText = "My towel began roasting my gym form so I replaced it with a kinder napkin." },
-    new DescriptionOption { shortText = "Fan chaos uprising", fullText = "The fans revolted after realizing their chants accidentally summoned seagulls instead of victory." },
-    new DescriptionOption { shortText = "Whistle confession leak", fullText = "We interviewed the missing whistle; it claims early retirement due to overblowing." },
-    new DescriptionOption { shortText = "Hydration movement news", fullText = "My water bottle started campaigning for hydration equality in all sports zones." },
-    new DescriptionOption { shortText = "Cloud conflict grass", fullText = "The grass filed a complaint against clouds for excessive shade during practice hours." },
-    new DescriptionOption { shortText = "Helmet silent protest", fullText = "My helmet started ignoring me after I forgot to thank it for every saved goal." },
-    new DescriptionOption { shortText = "Cat MVP recap", fullText = "The cat scored twice, knocked over Gatorade, and still demanded a post-match fish." },
-    new DescriptionOption { shortText = "Sneaker tax joke", fullText = "My sneakers filled tax forms claiming \"running expenses\" as emotional damage." },
-    new DescriptionOption { shortText = "Rain haircut delay", fullText = "Rain delayed not the match but my haircut, citing poor hairline weather conditions." },
-    new DescriptionOption { shortText = "Coach bird fear", fullText = "Coach now refuses to train near pigeons, calling them \"feathered chaos agents.\"" },
-    new DescriptionOption { shortText = "Guilty gloves case", fullText = "The gloves confessed to stealing attention during every slow-motion replay." },
-    new DescriptionOption { shortText = "Circus ref career", fullText = "Referee left the league to juggle flaming cones at the local circus." },
-    new DescriptionOption { shortText = "Bottle fame story", fullText = "My bottle went viral after spilling motivational quotes instead of water." },
-    new DescriptionOption { shortText = "Grass dance trend", fullText = "The grass uploaded a viral dance called \"Photosynthwave\" and became influencer of the year." },
-    new DescriptionOption { shortText = "Shadow takeover news", fullText = "My shadow became team captain after stealing every highlight." },
-    new DescriptionOption { shortText = "Haunted locker tale", fullText = "The locker room whispers at night about lost towels and vanished socks." },
-    new DescriptionOption { shortText = "Dolphin tactic myth", fullText = "Coach claims to speak fluent dolphin to improve underwater tactics." }
-};
+    private DescriptionOption[] allDescriptions = new DescriptionOption[]
+    {
+        new DescriptionOption { shortText = "Detailed performance", fullText = "Player breaks down every decision and movement during the crucial moments of play." },
+        new DescriptionOption { shortText = "Strategic approach", fullText = "Analysis reveals the tactical choices that shaped both offensive and defensive efforts." },
+        new DescriptionOption { shortText = "Preparation routine", fullText = "Hours of focused training and mental conditioning led to today's performance level." },
+        new DescriptionOption { shortText = "Team coordination", fullText = "Communication and trust between teammates proved essential for executing the game plan." },
+        new DescriptionOption { shortText = "Focus techniques", fullText = "Mental clarity and concentration methods helped maintain composure under pressure." },
+        new DescriptionOption { shortText = "Gear selection", fullText = "Equipment choices were carefully made to optimize comfort and performance standards." },
+        new DescriptionOption { shortText = "Coaching impact", fullText = "Strategic advice and motivational support from coaching staff made critical difference." },
+        new DescriptionOption { shortText = "Recovery process", fullText = "Post-match recovery includes proper rest, nutrition, and physical therapy sessions." },
+        new DescriptionOption { shortText = "Stress management", fullText = "Handling expectations requires mental strength and confidence in preparation work." },
+        new DescriptionOption { shortText = "Critical choices", fullText = "Split-second decisions during key moments determined the final outcome today." },
+        new DescriptionOption { shortText = "Fitness level", fullText = "Consistent training regimen maintained endurance and strength throughout the match." },
+        new DescriptionOption { shortText = "Crowd energy", fullText = "Supporter enthusiasm provided extra motivation during challenging periods of play." },
+        new DescriptionOption { shortText = "Competitor skill", fullText = "Opponent's abilities pushed performance levels higher and demanded complete focus." },
+        new DescriptionOption { shortText = "Next steps", fullText = "Future training will address weaknesses and build on strengths shown today." },
+        new DescriptionOption { shortText = "Error analysis", fullText = "Reviewing mistakes provides valuable lessons for improvement in upcoming matches." },
+        new DescriptionOption { shortText = "Success elements", fullText = "Combination of preparation, execution, and teamwork created winning conditions." },
+        new DescriptionOption { shortText = "Ritual benefits", fullText = "Consistent pre-game habits help establish mental readiness and physical warmup." },
+        new DescriptionOption { shortText = "Physical issues", fullText = "Managing minor injuries requires careful attention while maintaining performance quality." },
+        new DescriptionOption { shortText = "Condition effects", fullText = "Environmental factors influenced strategy and required adaptations during play." },
+        new DescriptionOption { shortText = "Season planning", fullText = "Long-term objectives guide daily training focus and competitive preparation approach." }
+    };
 
-private HeaderOption[] selectedHeaders = new HeaderOption[3];
-private DescriptionOption[] selectedDescriptions = new DescriptionOption[3];
+    private HeaderOption[] selectedHeaders = new HeaderOption[3];
+    private DescriptionOption[] selectedDescriptions = new DescriptionOption[3];
     
     private string selectedOpponent1Text;
     private string selectedPlayer1Text;
@@ -228,8 +203,6 @@ private DescriptionOption[] selectedDescriptions = new DescriptionOption[3];
     private void Awake()
     {
         Instance = this;
-        
-        // добавити ше якусь прокачку фейкову
     }
 
     private void Start()
@@ -289,6 +262,7 @@ private DescriptionOption[] selectedDescriptions = new DescriptionOption[3];
         enterIconPanel.SetActive(false);
         
         resultsPanel.SetActive(false);
+        statisticsPanel.SetActive(false);
         incomePanel.SetActive(false);
 
         SetAlpha(background, 0f);
@@ -519,9 +493,12 @@ private DescriptionOption[] selectedDescriptions = new DescriptionOption[3];
         dialoguePlayer2.SetActive(false);
         dialogueOpponent2.SetActive(false);
         continueButton.SetActive(false);
+        statisticsPanel.SetActive(false);
+        incomePanel.SetActive(false);
 
         SetAlpha(background, 0f);
         SetAlpha(interviewPanel, 0f);
+        SetAlpha(incomePanel, 0f);
         personBackground.transform.localScale = Vector3.zero;
         dialogueBackground.transform.localScale = Vector3.zero;
         dialogueOpponent1.transform.localScale = Vector3.zero;
@@ -533,13 +510,13 @@ private DescriptionOption[] selectedDescriptions = new DescriptionOption[3];
 
         TextMeshProUGUI text1 = dialogueOpponent1.GetComponentInChildren<TextMeshProUGUI>();
         if (text1 != null) text1.text = "";
-        
+    
         TextMeshProUGUI text2 = dialoguePlayer1.GetComponentInChildren<TextMeshProUGUI>();
         if (text2 != null) text2.text = "";
-        
+    
         TextMeshProUGUI text3 = dialoguePlayer2.GetComponentInChildren<TextMeshProUGUI>();
         if (text3 != null) text3.text = "";
-        
+    
         TextMeshProUGUI text4 = dialogueOpponent2.GetComponentInChildren<TextMeshProUGUI>();
         if (text4 != null) text4.text = "";
     }
@@ -567,77 +544,78 @@ private DescriptionOption[] selectedDescriptions = new DescriptionOption[3];
         PrepareRandomHeaders();
         yield return StartCoroutine(ShowPanelWithChildren(enterHeaderPanel));
     }
+
     private void PrepareRandomHeaders()
-{
-    List<HeaderOption> availableHeaders = new List<HeaderOption>(allHeaders);
-    
-    for (int i = 0; i < 3 && i < availableHeaders.Count; i++)
     {
-        int randomIndex = Random.Range(0, availableHeaders.Count);
-        selectedHeaders[i] = availableHeaders[randomIndex];
-        availableHeaders.RemoveAt(randomIndex);
+        List<HeaderOption> availableHeaders = new List<HeaderOption>(allHeaders);
         
-        if (headerButtons[i] != null)
+        for (int i = 0; i < 3 && i < availableHeaders.Count; i++)
         {
-            TextMeshProUGUI buttonText = headerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            if (buttonText != null)
+            int randomIndex = Random.Range(0, availableHeaders.Count);
+            selectedHeaders[i] = availableHeaders[randomIndex];
+            availableHeaders.RemoveAt(randomIndex);
+            
+            if (headerButtons[i] != null)
             {
-                buttonText.text = selectedHeaders[i].shortText;
+                TextMeshProUGUI buttonText = headerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+                if (buttonText != null)
+                {
+                    buttonText.text = selectedHeaders[i].shortText;
+                }
+                else
+                {
+                    Debug.Log($"TextMeshProUGUI not found in headerButtons[{i}]");
+                }
             }
             else
             {
-                Debug.Log($"TextMeshProUGUI not found in headerButtons[{i}]");
+                Debug.Log($"headerButtons[{i}] is null");
             }
         }
-        else
-        {
-            Debug.Log($"headerButtons[{i}] is null");
-        }
     }
-}
 
-private void PrepareRandomDescriptions()
-{
-    List<DescriptionOption> availableDescriptions = new List<DescriptionOption>(allDescriptions);
-    
-    for (int i = 0; i < 3 && i < availableDescriptions.Count; i++)
+    private void PrepareRandomDescriptions()
     {
-        int randomIndex = Random.Range(0, availableDescriptions.Count);
-        selectedDescriptions[i] = availableDescriptions[randomIndex];
-        availableDescriptions.RemoveAt(randomIndex);
+        List<DescriptionOption> availableDescriptions = new List<DescriptionOption>(allDescriptions);
         
-        if (descriptionButtons[i] != null)
+        for (int i = 0; i < 3 && i < availableDescriptions.Count; i++)
         {
-            TextMeshProUGUI buttonText = descriptionButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            if (buttonText != null)
+            int randomIndex = Random.Range(0, availableDescriptions.Count);
+            selectedDescriptions[i] = availableDescriptions[randomIndex];
+            availableDescriptions.RemoveAt(randomIndex);
+            
+            if (descriptionButtons[i] != null)
             {
-                buttonText.text = selectedDescriptions[i].shortText;
+                TextMeshProUGUI buttonText = descriptionButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+                if (buttonText != null)
+                {
+                    buttonText.text = selectedDescriptions[i].shortText;
+                }
+                else
+                {
+                    Debug.Log($"TextMeshProUGUI not found in descriptionButtons[{i}]");
+                }
             }
             else
             {
-                Debug.Log($"TextMeshProUGUI not found in descriptionButtons[{i}]");
+                Debug.Log($"descriptionButtons[{i}] is null");
             }
         }
-        else
-        {
-            Debug.Log($"descriptionButtons[{i}] is null");
-        }
     }
-}
 
-private void OnHeaderButtonClicked(int index)
-{
-    savedHeader = selectedHeaders[index].fullText;
-    Debug.Log("Header saved: " + savedHeader);
-    StartCoroutine(ShowDescriptionPanel());
-}
+    private void OnHeaderButtonClicked(int index)
+    {
+        savedHeader = selectedHeaders[index].fullText;
+        Debug.Log("Header saved: " + savedHeader);
+        StartCoroutine(ShowDescriptionPanel());
+    }
 
-private void OnDescriptionButtonClicked(int index)
-{
-    savedDescription = selectedDescriptions[index].fullText;
-    Debug.Log("Description saved: " + savedDescription);
-    StartCoroutine(ShowIconPanel());
-}
+    private void OnDescriptionButtonClicked(int index)
+    {
+        savedDescription = selectedDescriptions[index].fullText;
+        Debug.Log("Description saved: " + savedDescription);
+        StartCoroutine(ShowIconPanel());
+    }
 
     private IEnumerator ShowPanelWithChildren(GameObject panel)
     {
@@ -728,10 +706,16 @@ private void OnDescriptionButtonClicked(int index)
         yield return new WaitForSeconds(animationDuration);
         articlePanel.SetActive(false);
 
+        statisticsPanel.SetActive(false);
+        statisticsPanel.transform.localScale = Vector3.zero;
+    
+        incomePanel.SetActive(false);
+        SetAlpha(incomePanel, 0f);
+
         resultsPanel.SetActive(true);
         DOTween.To(() => GetAlpha(resultsPanel), x => SetAlpha(resultsPanel, x), 1f, animationDuration);
         yield return new WaitForSeconds(animationDuration);
-    
+
         if (resultsTitleText != null)
         {
             resultsTitleText.gameObject.SetActive(true);
@@ -746,10 +730,10 @@ private void OnDescriptionButtonClicked(int index)
 
         Vector3 originalScale = article.localScale;
         Vector3 originalPosition = article.localPosition;
-    
+
         article.localScale = originalScale * 3f;
         article.gameObject.SetActive(true);
-    
+
         article.DOScale(originalScale, 0.3f).SetEase(Ease.OutBounce);
         yield return new WaitForSeconds(0.3f);
 
@@ -814,92 +798,92 @@ private void OnDescriptionButtonClicked(int index)
     }
 
     private IEnumerator ShowIncomePanel()
-{
-    foreach (Transform child in incomePanel.transform)
     {
-        child.gameObject.SetActive(false);
-    }
+        foreach (Transform child in incomePanel.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
 
-    incomePanel.SetActive(true);
-    DOTween.To(() => GetAlpha(incomePanel), x => SetAlpha(incomePanel, x), 1f, animationDuration);
-    yield return new WaitForSeconds(animationDuration);
-
-    Transform panelChild = incomePanel.transform.Find("Panel");
-    if (panelChild != null)
-    {
-        RectTransform panelRect = panelChild.GetComponent<RectTransform>();
-        Vector3 originalPosition = panelRect.localPosition;
-        
-        panelRect.localPosition = new Vector3(originalPosition.x + 500f, originalPosition.y, originalPosition.z);
-        panelRect.gameObject.SetActive(true);
-        
-        panelRect.DOLocalMoveX(originalPosition.x, 0.3f).SetEase(Ease.OutQuad);
-        yield return new WaitForSeconds(0.3f);
-    }
-    else
-    {
-        Debug.Log("Panel child not found in incomePanel");
-    }
-
-    int earnedMoney = Random.Range(100, 1001);
-    int earnedReputation = Random.Range(100, 501);
-    
-    if (WalletController.Instance != null)
-    {
-        WalletController.Instance.Money += earnedMoney;
-        WalletController.Instance.Reputation += earnedReputation;
-    }
-    else
-    {
-        Debug.Log("WalletController.Instance is null");
-    }
-
-    if (incomeMoneyText != null)
-    {
-        incomeMoneyText.text = earnedMoney.ToString();
-        incomeMoneyText.gameObject.SetActive(true);
-        incomeMoneyText.transform.localScale = Vector3.zero;
-        incomeMoneyText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+        incomePanel.SetActive(true);
+        DOTween.To(() => GetAlpha(incomePanel), x => SetAlpha(incomePanel, x), 1f, animationDuration);
         yield return new WaitForSeconds(animationDuration);
-    }
-    else
-    {
-        Debug.Log("incomeMoneyText is null");
-    }
 
-    if (incomeReputationText != null)
-    {
-        incomeReputationText.text = earnedReputation.ToString();
-        incomeReputationText.gameObject.SetActive(true);
-        incomeReputationText.transform.localScale = Vector3.zero;
-        incomeReputationText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
-        yield return new WaitForSeconds(animationDuration);
-    }
-    else
-    {
-        Debug.Log("incomeReputationText is null");
-    }
+        Transform panelChild = incomePanel.transform.Find("Panel");
+        if (panelChild != null)
+        {
+            RectTransform panelRect = panelChild.GetComponent<RectTransform>();
+            Vector3 originalPosition = panelRect.localPosition;
+            
+            panelRect.localPosition = new Vector3(originalPosition.x + 500f, originalPosition.y, originalPosition.z);
+            panelRect.gameObject.SetActive(true);
+            
+            panelRect.DOLocalMoveX(originalPosition.x, 0.3f).SetEase(Ease.OutQuad);
+            yield return new WaitForSeconds(0.3f);
+        }
+        else
+        {
+            Debug.Log("Panel child not found in incomePanel");
+        }
 
-    if (continueButtonIncome != null)
-    {
-        continueButtonIncome.gameObject.SetActive(true);
-        continueButtonIncome.transform.localScale = Vector3.zero;
-        continueButtonIncome.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+        int earnedMoney = Random.Range(100, 1001);
+        int earnedReputation = Random.Range(100, 501);
+        
+        if (WalletController.Instance != null)
+        {
+            WalletController.Instance.Money += earnedMoney;
+            WalletController.Instance.Reputation += earnedReputation;
+        }
+        else
+        {
+            Debug.Log("WalletController.Instance is null");
+        }
+
+        if (incomeMoneyText != null)
+        {
+            incomeMoneyText.text = earnedMoney.ToString();
+            incomeMoneyText.gameObject.SetActive(true);
+            incomeMoneyText.transform.localScale = Vector3.zero;
+            incomeMoneyText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+            yield return new WaitForSeconds(animationDuration);
+        }
+        else
+        {
+            Debug.Log("incomeMoneyText is null");
+        }
+
+        if (incomeReputationText != null)
+        {
+            incomeReputationText.text = earnedReputation.ToString();
+            incomeReputationText.gameObject.SetActive(true);
+            incomeReputationText.transform.localScale = Vector3.zero;
+            incomeReputationText.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+            yield return new WaitForSeconds(animationDuration);
+        }
+        else
+        {
+            Debug.Log("incomeReputationText is null");
+        }
+
+        if (continueButtonIncome != null)
+        {
+            continueButtonIncome.gameObject.SetActive(true);
+            continueButtonIncome.transform.localScale = Vector3.zero;
+            continueButtonIncome.transform.DOScale(1f, animationDuration).SetEase(Ease.OutBack);
+        }
+        else
+        {
+            Debug.Log("continueButtonIncome is null");
+        }
+        
+        if (ArticleManager.Instance != null)
+        {
+            ArticleManager.Instance.AddArticle(savedHeader, savedDescription, savedIcon, earnedMoney);
+        }
+        else
+        {
+            Debug.Log("ArticleManager.Instance is null");
+        }
     }
-    else
-    {
-        Debug.Log("continueButtonIncome is null");
-    }
-    
-    if (ArticleManager.Instance != null)
-    {
-        ArticleManager.Instance.AddArticle(savedHeader, savedDescription, savedIcon, earnedMoney);
-    }
-    else
-    {
-        Debug.Log("ArticleManager.Instance is null");
-    }
-}
     
     private void OnContinueIncomeClicked()
     {
