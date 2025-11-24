@@ -948,6 +948,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Purchasing: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -970,7 +971,13 @@ PlayerSettings:
   windowsGamepadBackendHint: 0
   cloudProjectId: c28121fd-3782-46c9-8681-c6278a812019
   framebufferDepthMemorylessMode: 0
-  qualitySettingsNames: []
+  qualitySettingsNames:
+  - Very Low
+  - Low
+  - Medium
+  - High
+  - Very High
+  - Ultra
   projectName: ReporterGame
   organizationId: unity_7uso5rss2sjfeq
   cloudEnabled: 0
