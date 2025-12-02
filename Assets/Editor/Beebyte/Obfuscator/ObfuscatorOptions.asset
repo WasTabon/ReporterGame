@@ -26,8 +26,8 @@ MonoBehaviour:
   obfuscateMarkerInDecimal: 94
   RSAKeyLength: 1024
   addFakeCode: 1
-  minFalseMethodsPerClass: 150
-  maxFalseMethodsPerClass: 500
+  minFalseMethodsPerClass: 10
+  maxFalseMethodsPerClass: 150
   unicodeStartInDecimal: 65
   numberOfCharacters: 2
   createNameTranslationFile: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   inheritBeebyteAttributes: 0
   treatScriptableObjectsAsSerializable: 1
   deriveNamesFromCryptoHash: 1
-  sha1seed: i0MvjLGj0v0lHv1jb3JvND9B
+  sha1seed: 
   numberOfDifferentCharactersAsPowerOfTwo: 4
   numberOfHashBitsToUse: 6
   allowCopyingOfAllAttributesInFakeCode: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   - OnFailStart_
   - OnFailStop_
   skipEnums: 1
-  maxInstructionsForCloning: 3500
+  maxInstructionsForCloning: 2000
   preserveNamespaces: 0
   obfuscateMonoBehaviourClassNames: 0
   replaceLiterals:
@@ -302,7 +302,3 @@ MonoBehaviour:
   obfuscateAnonymousTypes: 0
   obfuscateAnonymousYieldingEnumeratorTypes: 1
   allowCompilerGeneratedFieldsOnSerializedTypesToBeObfuscated: 0
-  literalObfuscationBlockLength: 64
-  skipClassesByRegex:
-  - ^UnitySourceGeneratedAssemblyMonoScriptTypes_v.*$
-  retainIndices: 0
